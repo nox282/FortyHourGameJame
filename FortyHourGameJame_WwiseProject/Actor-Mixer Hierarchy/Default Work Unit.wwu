@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{4227B00A-4022-4AEB-891D-5117B57812B8}" SchemaVersion="85">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{4227B00A-4022-4AEB-891D-5117B57812B8}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{4227B00A-4022-4AEB-891D-5117B57812B8}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="New Sound SFX" ID="{314202FD-4D4D-4B7D-B39B-6492D0A38E5B}" ShortID="124904487">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2150212D-AB6F-4C87-A509-E3DE356CDD60}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{494CC2D2-A303-4391-A59A-4B1DC817BF18}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="UAMEE DONK12 MAKAROV A#" ID="{1F864CF7-92BA-489D-BF15-CB3D4D47B241}" ShortID="1011047559">
+							<Language>SFX</Language>
+							<AudioFile>UAMEE DONK12 MAKAROV A#.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="UAMEE DONK12 MAKAROV A#" ID="{1F864CF7-92BA-489D-BF15-CB3D4D47B241}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>
