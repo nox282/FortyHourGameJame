@@ -23,7 +23,7 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<RandomSequenceContainer Name="Player_Success_Dialouge" ID="{61622894-8A7E-4729-8AA3-1EE322990DC3}" ShortID="670199719">
+								<RandomSequenceContainer Name="Player_Success_Dialogue" ID="{61622894-8A7E-4729-8AA3-1EE322990DC3}" ShortID="670199719">
 									<PropertyList>
 										<Property Name="Pitch" Type="int32">
 											<ValueList>
