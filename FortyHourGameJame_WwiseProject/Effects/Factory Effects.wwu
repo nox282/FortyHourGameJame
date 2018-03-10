@@ -586,7 +586,6 @@
 								<Effect Name="High_Pass_60Hz" ID="{F9627628-0B10-4272-BC30-D4C20423CB38}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
 									<PropertyList>
 										<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
-										<Property Name="FrequencyBand1" Type="Real32" Value="60"/>
 										<Property Name="OnOffBand2" Type="bool" Value="False"/>
 										<Property Name="OnOffBand3" Type="bool" Value="False"/>
 									</PropertyList>
@@ -741,7 +740,7 @@
 								<Property Name="HFRatio" Type="Real32" Value="10"/>
 								<Property Name="NumberOfDelays" Type="int32" Value="12"/>
 								<Property Name="ReverbTime" Type="Real32" Value="1.5"/>
-								<Property Name="WetLevel" Type="Real32" Value="-30"/>
+								<Property Name="WetLevel" Type="Real32" Value="-8"/>
 							</PropertyList>
 						</Effect>
 						<Effect Name="Tunnel1" ID="{CC44B890-9865-4157-965F-86FED27BC4C6}" PluginName="Wwise Matrix Reverb" CompanyID="0" PluginID="115" PluginType="3">
