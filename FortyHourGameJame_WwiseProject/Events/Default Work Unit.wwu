@@ -119,6 +119,52 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Folder Name="Patients" ID="{216DE54E-2DFD-4DF2-BA1C-54D6B30760A4}" ShortID="906557297">
+					<ChildrenList>
+						<Event Name="Patient_Cough" ID="{D2EAC5D3-6BA3-4623-A9AD-2446BDA35370}">
+							<ChildrenList>
+								<Action Name="" ID="{ECDE6331-4288-48B1-8A90-3E48B8ED193B}" ShortID="411750813">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Coughs" ID="{97A1C653-4F7D-4A72-A530-A8BB0622E601}" WorkUnitID="{4227B00A-4022-4AEB-891D-5117B57812B8}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Patient_Fart" ID="{545E2E13-E3F6-4B64-AC13-0C67374568D6}">
+							<ChildrenList>
+								<Action Name="" ID="{EB6883EE-BA86-4CC7-A631-405C65666649}" ShortID="710398907">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Farts" ID="{4836A9A3-D543-41BE-A5EB-6ECCFA4146AB}" WorkUnitID="{4227B00A-4022-4AEB-891D-5117B57812B8}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Patient_Vomit" ID="{CCCB9217-F35A-457D-BC3E-1ED6046A3F74}">
+							<ChildrenList>
+								<Action Name="" ID="{021A1934-9C04-4187-8B42-79B1A71EC5EE}" ShortID="749396326">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Wretches" ID="{C2E5D831-8E3D-4A97-BF69-0BFCA4D3AB7D}" WorkUnitID="{4227B00A-4022-4AEB-891D-5117B57812B8}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
