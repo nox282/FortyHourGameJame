@@ -45,6 +45,80 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Folder Name="Pickups" ID="{F5187490-D604-48CF-9231-0924B2648F15}" ShortID="136114788">
+					<ChildrenList>
+						<Event Name="Pickup_Pills" ID="{6779F58E-27AB-461D-AE85-722DBF513292}">
+							<ChildrenList>
+								<Action Name="" ID="{9B1355B1-4A68-44BE-B601-25A786A3E378}" ShortID="911172468">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Pills" ID="{88D4ECF1-F220-4A92-9BDE-F801EFA6F9D0}" WorkUnitID="{4227B00A-4022-4AEB-891D-5117B57812B8}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Pickup_Cork" ID="{8913FEFB-8F8B-40B3-B2E3-6DD68A353DE3}">
+							<ChildrenList>
+								<Action Name="" ID="{ECFCA043-5B69-42E8-9698-B6A8F666F899}" ShortID="1043189915">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Cork" ID="{F1972B35-8B7F-408C-9E0A-B52739A0CD87}" WorkUnitID="{4227B00A-4022-4AEB-891D-5117B57812B8}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Pickup_Glue" ID="{6CA5370A-AAA4-4264-8F39-3DE8109A241D}">
+							<ChildrenList>
+								<Action Name="" ID="{E43C12AA-A351-4C8B-9ADF-D3D2A7569513}" ShortID="540028393">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Glue" ID="{BA89380D-50CD-49B8-947F-A9C707C0EF0F}" WorkUnitID="{4227B00A-4022-4AEB-891D-5117B57812B8}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Use_Hairdryer" ID="{1E1DCC22-A638-4D48-8895-893B616AF974}">
+							<ChildrenList>
+								<Action Name="" ID="{62479837-6FD7-4B4A-A5AA-3700895EF15C}" ShortID="364399654">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Hairdryer" ID="{C9ADD00F-2E9A-42C4-9677-D46544306530}" WorkUnitID="{4227B00A-4022-4AEB-891D-5117B57812B8}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Event Name="Feet" ID="{2C9DE0FB-220E-4A66-A496-B02AC2C90C94}">
+					<ChildrenList>
+						<Action Name="" ID="{52F037B0-79DB-46A5-AB49-55D639B58638}" ShortID="424698442">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Footsteps" ID="{E2BC05AB-2262-49ED-ACC9-1B90144D4798}" WorkUnitID="{4227B00A-4022-4AEB-891D-5117B57812B8}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
