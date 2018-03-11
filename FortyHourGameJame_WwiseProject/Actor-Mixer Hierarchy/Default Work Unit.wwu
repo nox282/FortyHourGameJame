@@ -378,7 +378,7 @@
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2150212D-AB6F-4C87-A509-E3DE356CDD60}"/>
 										</Reference>
 										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{494CC2D2-A303-4391-A59A-4B1DC817BF18}"/>
+											<ObjectRef Name="Player_Failure" ID="{AA5E1CFD-7096-497D-A689-5A2DCF083490}" WorkUnitID="{494CC2D2-A303-4391-A59A-4B1DC817BF18}"/>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
@@ -679,7 +679,7 @@
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2150212D-AB6F-4C87-A509-E3DE356CDD60}"/>
 										</Reference>
 										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{494CC2D2-A303-4391-A59A-4B1DC817BF18}"/>
+											<ObjectRef Name="Player_Success_Dialouge" ID="{78544877-83B8-4AB2-B27B-73539A712704}" WorkUnitID="{494CC2D2-A303-4391-A59A-4B1DC817BF18}"/>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
