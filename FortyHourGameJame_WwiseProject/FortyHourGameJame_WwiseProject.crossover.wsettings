@@ -4,6 +4,8 @@
 		<UserProjectSettings Name="" ID="{EB3E73AC-5022-4C9F-88D4-A91B3682E037}">
 			<PropertyList>
 				<Property Name="AudioFilesImporter\Path" Type="string" Value="Y:\Desktop"/>
+				<Property Name="Event Action List\{55D43AD6-D3FE-40F9-BB74-CA1920EE8878}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{90DC2EF3-7E09-442A-8C05-D9B072764565}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{C0C710CB-D998-4F73-9BE9-EEAA73E7A529}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{D894D1AD-EBD8-44A0-B75C-D9A6AE224ACC}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="EventView\FilterMode1" Type="int32" Value="2"/>

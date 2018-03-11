@@ -17,6 +17,34 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Player_Success" ID="{90DC2EF3-7E09-442A-8C05-D9B072764565}">
+					<ChildrenList>
+						<Action Name="" ID="{53A95172-E84D-4FDF-9CD0-C42AC508CF29}" ShortID="415253675">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Player_Success" ID="{47DD70E8-BB8C-468C-8AAC-3BFCAD9BDB50}" WorkUnitID="{4227B00A-4022-4AEB-891D-5117B57812B8}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Player_Failure" ID="{55D43AD6-D3FE-40F9-BB74-CA1920EE8878}">
+					<ChildrenList>
+						<Action Name="" ID="{182EDB60-B5C9-4D8F-BA9B-FCDF8BD3E353}" ShortID="442775391">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Player_Fail" ID="{155136A7-1B55-4FE5-A853-8D7D308E1A75}" WorkUnitID="{4227B00A-4022-4AEB-891D-5117B57812B8}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
