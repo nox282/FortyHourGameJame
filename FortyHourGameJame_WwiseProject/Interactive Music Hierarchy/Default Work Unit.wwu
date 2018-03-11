@@ -157,6 +157,11 @@
 								<MusicSegment Name="Cats_MainTitle" ID="{FAF87988-54D8-4174-B779-A0BD72BDF8BA}" ShortID="380337248">
 									<PropertyList>
 										<Property Name="EndPosition" Type="Real64" Value="12800"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>5</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">

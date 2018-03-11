@@ -371,6 +371,7 @@
 												<Value>1</Value>
 											</ValueList>
 										</Property>
+										<Property Name="OverrideOutput" Type="bool" Value="True"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -666,6 +667,7 @@
 												<Value>1</Value>
 											</ValueList>
 										</Property>
+										<Property Name="OverrideOutput" Type="bool" Value="True"/>
 										<Property Name="Pitch" Type="int32">
 											<ValueList>
 												<Value>200</Value>

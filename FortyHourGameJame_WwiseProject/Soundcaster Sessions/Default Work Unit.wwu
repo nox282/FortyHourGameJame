@@ -17,6 +17,38 @@
 							<ObjectRef Name="Player_Failure" ID="{55D43AD6-D3FE-40F9-BB74-CA1920EE8878}" WorkUnitID="{D6D04880-DF42-4838-B748-B9C3CAE02F19}"/>
 							<Position X="2" Y="1"/>
 						</Module>
+						<Module>
+							<ObjectRef Name="Feet" ID="{2C9DE0FB-220E-4A66-A496-B02AC2C90C94}" WorkUnitID="{D6D04880-DF42-4838-B748-B9C3CAE02F19}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Pickup_Cork" ID="{8913FEFB-8F8B-40B3-B2E3-6DD68A353DE3}" WorkUnitID="{D6D04880-DF42-4838-B748-B9C3CAE02F19}"/>
+							<Position X="4" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Pickup_Glue" ID="{6CA5370A-AAA4-4264-8F39-3DE8109A241D}" WorkUnitID="{D6D04880-DF42-4838-B748-B9C3CAE02F19}"/>
+							<Position X="4" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Pickup_Pills" ID="{6779F58E-27AB-461D-AE85-722DBF513292}" WorkUnitID="{D6D04880-DF42-4838-B748-B9C3CAE02F19}"/>
+							<Position X="4" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Use_Hairdryer" ID="{1E1DCC22-A638-4D48-8895-893B616AF974}" WorkUnitID="{D6D04880-DF42-4838-B748-B9C3CAE02F19}"/>
+							<Position X="4" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Patient_Cough" ID="{D2EAC5D3-6BA3-4623-A9AD-2446BDA35370}" WorkUnitID="{D6D04880-DF42-4838-B748-B9C3CAE02F19}"/>
+							<Position X="5" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Patient_Fart" ID="{545E2E13-E3F6-4B64-AC13-0C67374568D6}" WorkUnitID="{D6D04880-DF42-4838-B748-B9C3CAE02F19}"/>
+							<Position X="5" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Patient_Vomit" ID="{CCCB9217-F35A-457D-BC3E-1ED6046A3F74}" WorkUnitID="{D6D04880-DF42-4838-B748-B9C3CAE02F19}"/>
+							<Position X="5" Y="2"/>
+						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
