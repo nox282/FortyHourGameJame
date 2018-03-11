@@ -21,6 +21,7 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="PositioningType" Type="int16" Value="1"/>
 						<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
@@ -29,6 +30,9 @@
 						</Property>
 					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="New Attenuation" ID="{5AF1523F-CE47-463A-A38B-C23ABEA12B88}" WorkUnitID="{880A2E8D-8D43-4D82-A44D-EECFDB2E2FBF}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2150212D-AB6F-4C87-A509-E3DE356CDD60}"/>
 						</Reference>
@@ -801,6 +805,7 @@
 						<ActorMixer Name="Hairdryer" ID="{E6D5FEF2-93AF-4E01-A788-F7297E392A8D}" ShortID="432212887">
 							<PropertyList>
 								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="PositioningType" Type="int16" Value="1"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-18</Value>
@@ -808,6 +813,9 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="New Attenuation" ID="{5AF1523F-CE47-463A-A38B-C23ABEA12B88}" WorkUnitID="{880A2E8D-8D43-4D82-A44D-EECFDB2E2FBF}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2150212D-AB6F-4C87-A509-E3DE356CDD60}"/>
 								</Reference>
@@ -1032,6 +1040,9 @@
 						<Property Name="PositioningType" Type="int16" Value="1"/>
 					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="New Attenuation" ID="{5AF1523F-CE47-463A-A38B-C23ABEA12B88}" WorkUnitID="{880A2E8D-8D43-4D82-A44D-EECFDB2E2FBF}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2150212D-AB6F-4C87-A509-E3DE356CDD60}"/>
 						</Reference>
