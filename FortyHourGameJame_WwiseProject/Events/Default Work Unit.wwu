@@ -47,7 +47,7 @@
 				</Event>
 				<Folder Name="Pickups" ID="{F5187490-D604-48CF-9231-0924B2648F15}" ShortID="136114788">
 					<ChildrenList>
-						<Event Name="Pickup_Pills" ID="{6779F58E-27AB-461D-AE85-722DBF513292}">
+						<Event Name="Pickup_Generic" ID="{6779F58E-27AB-461D-AE85-722DBF513292}">
 							<ChildrenList>
 								<Action Name="" ID="{9B1355B1-4A68-44BE-B601-25A786A3E378}" ShortID="911172468">
 									<PropertyList>
@@ -89,20 +89,48 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Use_Hairdryer" ID="{1E1DCC22-A638-4D48-8895-893B616AF974}">
+						<Folder Name="Hairdryer" ID="{FD6FA68F-C431-4747-8963-6415DB337805}" ShortID="805056632">
 							<ChildrenList>
-								<Action Name="" ID="{62479837-6FD7-4B4A-A5AA-3700895EF15C}" ShortID="364399654">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="1"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Hairdryer" ID="{C9ADD00F-2E9A-42C4-9677-D46544306530}" WorkUnitID="{4227B00A-4022-4AEB-891D-5117B57812B8}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
+								<Event Name="Start_Hairdryer" ID="{1E1DCC22-A638-4D48-8895-893B616AF974}">
+									<ChildrenList>
+										<Action Name="" ID="{43E74DEC-FC7B-4A19-A652-DD5F055B0390}" ShortID="927493603">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="HairDry Sequence" ID="{9EBC0A16-A64F-4B22-A3CD-04FBE238741C}" WorkUnitID="{4227B00A-4022-4AEB-891D-5117B57812B8}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Stop_Hairdryer" ID="{9367BA72-3CA0-4E76-984D-D5C4676547CF}">
+									<ChildrenList>
+										<Action Name="" ID="{EC0DD8F4-6224-4A6C-AD38-BBF5620E2F0A}" ShortID="344217946">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="HairdryerStop" ID="{724DF167-CA63-4102-8EC1-CFFC3A490138}" WorkUnitID="{4227B00A-4022-4AEB-891D-5117B57812B8}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{8BB41F61-C68F-4CBF-81FF-FB07ECD33528}" ShortID="811512867">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="HairDry Sequence" ID="{9EBC0A16-A64F-4B22-A3CD-04FBE238741C}" WorkUnitID="{4227B00A-4022-4AEB-891D-5117B57812B8}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
-						</Event>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Event Name="Feet" ID="{2C9DE0FB-220E-4A66-A496-B02AC2C90C94}">

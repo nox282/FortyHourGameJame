@@ -103,6 +103,441 @@
 												</MusicTrackSequence>
 											</SequenceList>
 										</MusicTrack>
+										<MusicTrack Name="Flatline" ID="{57E1090A-5EBF-45AD-B048-48133E9F3905}" ShortID="601111672">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{494CC2D2-A303-4391-A59A-4B1DC817BF18}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="flatline1a" ID="{5834AE62-4955-443E-9436-670FEE2F33FC}" ShortID="395064998">
+													<Language>SFX</Language>
+													<AudioFile>Flatline\flatline1a.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File ID="656306486"/>
+													</ConvertedFileIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="flatline1b" ID="{30470E83-F08C-4FE3-AC01-1423751CAB99}" ShortID="801428799">
+													<Language>SFX</Language>
+													<AudioFile>Flatline\flatline1b.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File ID="553003786"/>
+													</ConvertedFileIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="flatline1c" ID="{D0672802-460B-4C52-83D6-C1AFA91BDD7A}" ShortID="628893504">
+													<Language>SFX</Language>
+													<AudioFile>Flatline\flatline1c.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File ID="396955399"/>
+													</ConvertedFileIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="flatline1d" ID="{F12ED502-5F3B-47E5-AAF4-B5C06A807532}" ShortID="384801032">
+													<Language>SFX</Language>
+													<AudioFile>Flatline\flatline1d.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File ID="960992097"/>
+													</ConvertedFileIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="flatline1e" ID="{5C20E7F0-F646-462B-AC46-B4A9FB76B574}" ShortID="170254969">
+													<Language>SFX</Language>
+													<AudioFile>Flatline\flatline1e.wav</AudioFile>
+												</AudioFileSource>
+												<AudioFileSource Name="flatline2" ID="{71504362-9A9D-4798-ADEE-57025A02AEB6}" ShortID="214833592">
+													<Language>SFX</Language>
+													<AudioFile>Flatline\flatline2.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File ID="311858724"/>
+													</ConvertedFileIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<TransitionList>
+												<MusicTransition Name="Root" ID="{B60A9A88-1260-4943-A559-09B56B44F650}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</TransitionList>
+											<SequenceList>
+												<MusicTrackSequence Name="" ID="{1D7C0395-A0CE-43E0-A627-A38210162ADF}">
+													<ClipList>
+														<MusicClip Name="flatline1a" ID="{910D71D1-B4E5-4800-8124-E358A1BA7487}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="1600"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="104000"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1a" ID="{5834AE62-4955-443E-9436-670FEE2F33FC}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1a" ID="{D9F6BE3A-582A-4546-9AFB-56E09AD5DBBD}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="1600"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="105600"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1a" ID="{5834AE62-4955-443E-9436-670FEE2F33FC}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1a" ID="{F3F95A59-5DE5-4559-AB62-D1C936577B46}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="1600"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="107200"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1a" ID="{5834AE62-4955-443E-9436-670FEE2F33FC}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1a" ID="{36E6800F-A4A0-4DE6-86AC-8CD438C3AF03}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="1600"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="108800"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1a" ID="{5834AE62-4955-443E-9436-670FEE2F33FC}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1b" ID="{5FDF1BA4-82A7-4FAA-97F5-AC98F66CF50F}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="800"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="110400"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1b" ID="{30470E83-F08C-4FE3-AC01-1423751CAB99}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1b" ID="{2B43CE28-98C8-4862-9348-0F9B08295651}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="800"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="111200"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1b" ID="{30470E83-F08C-4FE3-AC01-1423751CAB99}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1b" ID="{829992BC-1180-4965-B8AA-92C12ECF76D5}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="800"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="112000"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1b" ID="{30470E83-F08C-4FE3-AC01-1423751CAB99}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1b" ID="{425DE407-9BBE-4238-92AC-15F9A16B414F}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="800"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="112800"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1b" ID="{30470E83-F08C-4FE3-AC01-1423751CAB99}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1c" ID="{37B86072-F225-4444-8A01-43AB4F063EFA}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="400"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="113600"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1c" ID="{D0672802-460B-4C52-83D6-C1AFA91BDD7A}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1c" ID="{20A4AB2F-B3E7-4700-90E9-FE3FAA12E3A1}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="400"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="114000"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1c" ID="{D0672802-460B-4C52-83D6-C1AFA91BDD7A}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1c" ID="{E2F1B60D-A050-4B9A-A089-3C71F5E4C557}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="400"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="114400"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1c" ID="{D0672802-460B-4C52-83D6-C1AFA91BDD7A}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1c" ID="{388D6200-E6D1-41C6-8E0E-3B3996D8793D}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="400"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="114800"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1c" ID="{D0672802-460B-4C52-83D6-C1AFA91BDD7A}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1c" ID="{E8FD0801-B264-441D-899A-884E93491A97}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="400"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="115200"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1c" ID="{D0672802-460B-4C52-83D6-C1AFA91BDD7A}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1c" ID="{C7B554CC-318D-4D9E-AA65-31AEB2A1E754}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="400"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="115600"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1c" ID="{D0672802-460B-4C52-83D6-C1AFA91BDD7A}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1c" ID="{8DF19D1D-470A-4793-9142-F8208D19A095}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="400"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="116000"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1c" ID="{D0672802-460B-4C52-83D6-C1AFA91BDD7A}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1c" ID="{5911C87E-C174-4A39-89C4-AC8105A8BC67}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="400"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="116400"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1c" ID="{D0672802-460B-4C52-83D6-C1AFA91BDD7A}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1d" ID="{14A25109-9339-4A71-B01B-BE7F5A9E7CE7}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="200"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="116800"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1d" ID="{F12ED502-5F3B-47E5-AAF4-B5C06A807532}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1d" ID="{9302622E-2CA9-4A4C-B592-1AE884E385E5}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="200"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="117000"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1d" ID="{F12ED502-5F3B-47E5-AAF4-B5C06A807532}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1d" ID="{D2B774A7-E0CB-4190-B275-051FE0376420}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="200"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="117200"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1d" ID="{F12ED502-5F3B-47E5-AAF4-B5C06A807532}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1d" ID="{E15B3407-4773-4A70-AF5E-501EC08AA933}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="200"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="117400"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1d" ID="{F12ED502-5F3B-47E5-AAF4-B5C06A807532}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1d" ID="{D9E6C51C-AE4C-4609-912B-D5C8DD5F1299}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="200"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="117600"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1d" ID="{F12ED502-5F3B-47E5-AAF4-B5C06A807532}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1d" ID="{DBADD68A-FF55-4C3D-BFCA-332D961C1380}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="200"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="117800"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1d" ID="{F12ED502-5F3B-47E5-AAF4-B5C06A807532}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1d" ID="{78D421B9-D845-4322-AB19-F2F7B391B655}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="200"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="118000"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1d" ID="{F12ED502-5F3B-47E5-AAF4-B5C06A807532}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1d" ID="{9F66C7D7-5085-4320-8261-B2978F83DF61}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="200"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="118200"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1d" ID="{F12ED502-5F3B-47E5-AAF4-B5C06A807532}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1e" ID="{FCBB598F-9101-4F7E-BD20-8056C9DAB54C}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="100"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="118400"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1e" ID="{5C20E7F0-F646-462B-AC46-B4A9FB76B574}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1e" ID="{9127CB4B-42B9-40D0-970D-1C443178355E}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="100"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="118500"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1e" ID="{5C20E7F0-F646-462B-AC46-B4A9FB76B574}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1e" ID="{E9D94485-161B-4AAF-BB0C-4D5CC4D31868}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="100"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="118600"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1e" ID="{5C20E7F0-F646-462B-AC46-B4A9FB76B574}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1e" ID="{9B366D8B-BDAD-4EC2-908F-C5223C97E18A}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="100"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="118700"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1e" ID="{5C20E7F0-F646-462B-AC46-B4A9FB76B574}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1e" ID="{FFED1E89-1464-4A7E-A6D8-01507DBD7EBA}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="100"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="118800"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1e" ID="{5C20E7F0-F646-462B-AC46-B4A9FB76B574}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1e" ID="{E3F0A810-5DB7-4D35-9729-91D23CDDE4DA}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="100"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="118900"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1e" ID="{5C20E7F0-F646-462B-AC46-B4A9FB76B574}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1e" ID="{4A49FE6F-4B26-46EC-BBF1-36E2F377B52C}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="100"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="119000"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1e" ID="{5C20E7F0-F646-462B-AC46-B4A9FB76B574}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1e" ID="{9BD38FED-CB39-4F3F-A832-0B8909D69A90}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="100"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="119100"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1e" ID="{5C20E7F0-F646-462B-AC46-B4A9FB76B574}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1e" ID="{BB105DC6-2910-4B4B-B26D-43392AA7520A}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="100"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="119200"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1e" ID="{5C20E7F0-F646-462B-AC46-B4A9FB76B574}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1e" ID="{3A321DEE-96E9-44BA-BB7B-4B7BCA387A0D}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="100"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="119300"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1e" ID="{5C20E7F0-F646-462B-AC46-B4A9FB76B574}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1e" ID="{AC03D45B-3A1B-423A-87C4-4A4DA620603F}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="100"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="119400"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1e" ID="{5C20E7F0-F646-462B-AC46-B4A9FB76B574}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1e" ID="{ED897CDB-F6A5-4D65-B620-B602A4DD6CA5}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="100"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="119500"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1e" ID="{5C20E7F0-F646-462B-AC46-B4A9FB76B574}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1e" ID="{82180A68-679D-451F-BFC2-713D43C078F5}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="100"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="119600"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1e" ID="{5C20E7F0-F646-462B-AC46-B4A9FB76B574}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1e" ID="{2E95AB8D-DE86-4004-98A0-BFC8C2AD1E01}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="100"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="119700"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1e" ID="{5C20E7F0-F646-462B-AC46-B4A9FB76B574}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1e" ID="{7430B5DF-DC9C-4CFE-AA91-89341855C0D0}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="100"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="119800"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1e" ID="{5C20E7F0-F646-462B-AC46-B4A9FB76B574}"/>
+														</MusicClip>
+														<MusicClip Name="flatline2" ID="{69D2B6F3-701E-46CC-A43F-AF3A5B92E95B}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="3059.95833333333"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="911.627906976748"/>
+																<Property Name="PlayAt" Type="Real64" Value="119900"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline2" ID="{71504362-9A9D-4798-ADEE-57025A02AEB6}"/>
+														</MusicClip>
+														<MusicClip Name="flatline1e" ID="{7D5FEE17-C5D4-4593-BC91-874AC90F58E5}">
+															<PropertyList>
+																<Property Name="EndTrimOffset" Type="Real64" Value="100"/>
+																<Property Name="FadeInMode" Type="int16" Value="0"/>
+																<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																<Property Name="PlayAt" Type="Real64" Value="119900"/>
+															</PropertyList>
+															<AudioSourceRef Name="flatline1e" ID="{5C20E7F0-F646-462B-AC46-B4A9FB76B574}"/>
+														</MusicClip>
+													</ClipList>
+												</MusicTrackSequence>
+											</SequenceList>
+										</MusicTrack>
 									</ChildrenList>
 									<CueList>
 										<MusicCue Name="Entry Cue" ID="{C93DB02C-26DD-401C-BA88-B3D6A4903036}"/>
@@ -282,6 +717,18 @@
 										</Reference>
 										<Reference Name="SourceContextObject">
 											<ObjectRef Name="Gameplay" ID="{6DC585A8-140D-4DC1-AC28-C22E97794FC9}" WorkUnitID="{03A7086F-82BD-4C97-A1A6-35EF8185C3BA}"/>
+										</Reference>
+									</ReferenceList>
+									<TransitionInfo/>
+								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{7D18AACE-26D6-4442-926C-E6F4D7B828B7}">
+									<PropertyList>
+										<Property Name="ExitSourceAt" Type="int16" Value="3"/>
+										<Property Name="SourceContextType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="SourceContextObject">
+											<ObjectRef Name="Main_Title" ID="{0F628841-2E9E-4BF9-AF52-117EB67654EB}" WorkUnitID="{03A7086F-82BD-4C97-A1A6-35EF8185C3BA}"/>
 										</Reference>
 									</ReferenceList>
 									<TransitionInfo/>
