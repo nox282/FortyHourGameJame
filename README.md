@@ -1,1 +1,0 @@
-# UNITY GAME FOR [https://itch.io/jam/40-hours](https://itch.io/jam/40-hours) 
