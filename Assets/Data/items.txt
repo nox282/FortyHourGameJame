@@ -1,0 +1,10 @@
+bandages,5
+blue_pill,0
+cat_dentures,0
+cork,0
+glue,0
+hairdryer,0
+ice,5
+paper_bag,0
+torch,5
+yellow_pill,0

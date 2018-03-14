@@ -1,0 +1,295 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea584a21ca2a24c49a58b49fa36d44e2, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - Guid: '{3CE4A6DE-C5E0-42AE-A340-928F855F6069}'
+    m_lastTimePart2: -1999271448
+    m_lastTimePsrt1: 496183486
+    ParentPhysicalPath: 
+    PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    List: []
+  autoPopulateEnabled: 1
+  AuxBusWwu:
+  - Guid: '{494CC2D2-A303-4391-A59A-4B1DC817BF18}'
+    m_lastTimePart2: -1999271448
+    m_lastTimePsrt1: 509872662
+    ParentPhysicalPath: 
+    PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    List: []
+  BankWwu:
+  - Guid: '{0B067C9E-64C0-4FD7-8A12-EA55AB87D9EE}'
+    m_lastTimePart2: -1999271448
+    m_lastTimePsrt1: 507833736
+    ParentPhysicalPath: 
+    PhysicalPath: SoundBanks\Default Work Unit.wwu
+    List:
+    - Guid: 165c899ec26c5b4381e61e40dbfcf3a2
+      ID: 1211995789
+      Name: Soundbnk
+      Path: Default Work Unit\Soundbnk
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Soundbnk
+        ObjectType: 7
+  basePath: Audio\GeneratedSoundBanks
+  callbackManagerBufferSize: 4
+  CurrentPluginConfig: 
+  defaultPoolSize: 4096
+  EventWwu:
+  - Guid: '{D6D04880-DF42-4838-B748-B9C3CAE02F19}'
+    m_lastTimePart2: -1999271448
+    m_lastTimePsrt1: 507688644
+    ParentPhysicalPath: 
+    PhysicalPath: Events\Default Work Unit.wwu
+    List:
+    - Guid: fbe09d2c0e22664aa496b02ac2c90c94
+      ID: -1094008839
+      Name: Feet
+      Path: Default Work Unit\Feet
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Feet
+        ObjectType: 3
+      maxAttenuation: 100
+      maxDuration: 0
+      minDuration: 0
+    - Guid: d3c5ead2a36b2346a9ad2446bda35370
+      ID: -745750021
+      Name: Patient_Cough
+      Path: Default Work Unit\Patients\Patient_Cough
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Patients
+        ObjectType: 4
+      - ElementName: Patient_Cough
+        ObjectType: 3
+      maxAttenuation: 100
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 132e5e54f6e3644bac130c67374568d6
+      ID: -1624660822
+      Name: Patient_Fart
+      Path: Default Work Unit\Patients\Patient_Fart
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Patients
+        ObjectType: 4
+      - ElementName: Patient_Fart
+        ObjectType: 3
+      maxAttenuation: 100
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 1792cbcc5af37d45bc3e1ed6046a3f74
+      ID: 918452968
+      Name: Patient_Vomit
+      Path: Default Work Unit\Patients\Patient_Vomit
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Patients
+        ObjectType: 4
+      - ElementName: Patient_Vomit
+        ObjectType: 3
+      maxAttenuation: 100
+      maxDuration: 0
+      minDuration: 0
+    - Guid: fbfe13898b8fb340b2e36dd68a353de3
+      ID: -2065839829
+      Name: Pickup_Cork
+      Path: Default Work Unit\Pickups\Pickup_Cork
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Pickups
+        ObjectType: 4
+      - ElementName: Pickup_Cork
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 8ef57967ab271d46ae85722dbf513292
+      ID: 217759215
+      Name: Pickup_Generic
+      Path: Default Work Unit\Pickups\Pickup_Generic
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Pickups
+        ObjectType: 4
+      - ElementName: Pickup_Generic
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 0a37a56ca4aa64428f393de8109a241d
+      ID: 1313627535
+      Name: Pickup_Glue
+      Path: Default Work Unit\Pickups\Pickup_Glue
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Pickups
+        ObjectType: 4
+      - ElementName: Pickup_Glue
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: add194d8d8eba044b75cd9a6ae224acc
+      ID: -1362926625
+      Name: Play_Music
+      Path: Default Work Unit\Play_Music
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Music
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: d63ad455fed3f940bb74ca1920ee8878
+      ID: -1005101455
+      Name: Player_Failure
+      Path: Default Work Unit\Player_Failure
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player_Failure
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: f32edc90097e2a448c05d9b072764565
+      ID: 1977201850
+      Name: Player_Success
+      Path: Default Work Unit\Player_Success
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Player_Success
+        ObjectType: 3
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 22cc1d1e38a6484d8895893b616af974
+      ID: 63629884
+      Name: Start_Hairdryer
+      Path: Default Work Unit\Pickups\Hairdryer\Start_Hairdryer
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Pickups
+        ObjectType: 4
+      - ElementName: Hairdryer
+        ObjectType: 4
+      - ElementName: Start_Hairdryer
+        ObjectType: 3
+      maxAttenuation: 100
+      maxDuration: 0
+      minDuration: 0
+    - Guid: 72ba6793a03c764e984dd5c4676547cf
+      ID: 1425259882
+      Name: Stop_Hairdryer
+      Path: Default Work Unit\Pickups\Hairdryer\Stop_Hairdryer
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Pickups
+        ObjectType: 4
+      - ElementName: Hairdryer
+        ObjectType: 4
+      - ElementName: Stop_Hairdryer
+        ObjectType: 3
+      maxAttenuation: 100
+      maxDuration: 0
+      minDuration: 0
+  ExpandedItems:
+  - /FortyHourGameJame_WwiseProject
+  - /FortyHourGameJame_WwiseProject/Events
+  - /FortyHourGameJame_WwiseProject/Events/Default Work Unit
+  - /FortyHourGameJame_WwiseProject/States
+  language: English(US)
+  lowerPoolSize: 2048
+  m_lastPopulateTimePart2: 0
+  m_lastPopulateTimePsrt1: 0
+  memoryCutoffThreshold: 0.95
+  preparePoolSize: 0
+  RtpcWwu:
+  - Guid: '{4CE9DFE1-B035-417E-AAFB-9910ACAE5796}'
+    m_lastTimePart2: -1999271448
+    m_lastTimePsrt1: 509337359
+    ParentPhysicalPath: 
+    PhysicalPath: Game Parameters\Default Work Unit.wwu
+    List:
+    - Guid: 77535d2778ab78489fdbb85bfd198b0b
+      ID: -374824356
+      Name: Timer
+      Path: Default Work Unit\Flatline Countdown\Timer
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Flatline Countdown
+        ObjectType: 4
+      - ElementName: Timer
+        ObjectType: 13
+  StateWwu:
+  - Guid: '{BC8036FE-4273-49B1-8D2B-52726ACBA45C}'
+    m_lastTimePart2: -1999271448
+    m_lastTimePsrt1: 507973819
+    ParentPhysicalPath: 
+    PhysicalPath: States\Default Work Unit.wwu
+    List:
+    - Guid: 46664758194f2e4092a26f485f6c1e72
+      ID: 733168346
+      Name: Game_Start
+      Path: Default Work Unit\Game_Start
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Game_Start
+        ObjectType: 9
+      ValueGuids:
+      - bytes: ff1dc5b1084a554f8102fb694c3d461f
+      - bytes: 945451942225be44b0f1f4c1c13962c3
+      - bytes: 9a837105fcd7d54d982af9f6d468d827
+      ValueIcons:
+      - ElementName: Gameplay
+        ObjectType: 8
+      - ElementName: Main_Title
+        ObjectType: 8
+      - ElementName: None
+        ObjectType: 8
+      valueIDs: 01bf550521930627db3ba32c
+      values:
+      - Gameplay
+      - Main_Title
+      - None
+  streamingPoolSize: 1024
+  SwitchWwu:
+  - Guid: '{2FCAA61D-4BC9-4373-8E13-3F9816209A34}'
+    m_lastTimePart2: -1999271448
+    m_lastTimePsrt1: 509227293
+    ParentPhysicalPath: 
+    PhysicalPath: Switches\Default Work Unit.wwu
+    List: []
+  TriggerWwu:
+  - Guid: '{5FADE5D7-16F6-4C83-A8AB-1F450E116C96}'
+    m_lastTimePart2: -1999271448
+    m_lastTimePsrt1: 509397385
+    ParentPhysicalPath: 
+    PhysicalPath: Triggers\Default Work Unit.wwu
+    List: []

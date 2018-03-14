@@ -1,0 +1,242 @@
+fileFormatVersion: 2
+guid: 4a378ff93207708438be90fe22183b41
+timeCreated: 1520773768
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bandages
+    100002: Bed
+    100004: Cadre001
+    100006: Cadre002
+    100008: Cadre003
+    100010: Cadre004
+    100012: Cadre005
+    100014: Chair
+    100016: Commode
+    100018: Cork
+    100020: Cylinder001
+    100022: Dentures
+    100024: Desk
+    100026: Door
+    100028: Glue
+    100030: Ice
+    100032: Mini_Table
+    100034: Moulures
+    100036: Needle
+    100038: Paper bag
+    100040: Pills
+    100042: Rideaux
+    100044: Room
+    100046: //RootNode
+    100048: Tapis
+    100050: Thread
+    100052: Torch
+    100054: Vase
+    400000: Bandages
+    400002: Bed
+    400004: Cadre001
+    400006: Cadre002
+    400008: Cadre003
+    400010: Cadre004
+    400012: Cadre005
+    400014: Chair
+    400016: Commode
+    400018: Cork
+    400020: Cylinder001
+    400022: Dentures
+    400024: Desk
+    400026: Door
+    400028: Glue
+    400030: Ice
+    400032: Mini_Table
+    400034: Moulures
+    400036: Needle
+    400038: Paper bag
+    400040: Pills
+    400042: Rideaux
+    400044: Room
+    400046: //RootNode
+    400048: Tapis
+    400050: Thread
+    400052: Torch
+    400054: Vase
+    2100000: 'Material #27'
+    2100002: 'Material #36'
+    2100004: 'Material #33'
+    2100006: 'Material #29'
+    2100008: 'Material #34'
+    2100010: 'Material #31'
+    2100012: 'Material #30'
+    2100014: 'Material #42'
+    2100016: 'Material #38'
+    2100018: 'Material #35'
+    2100020: No Name
+    2100022: 'Material #28'
+    2100024: 'Material #32'
+    2100026: 'Material #39'
+    2100028: 'Material #37'
+    2100030: 'Material #41'
+    2100032: 'Material #40'
+    2300000: Bandages
+    2300002: Bed
+    2300004: Cadre001
+    2300006: Cadre002
+    2300008: Cadre003
+    2300010: Cadre004
+    2300012: Cadre005
+    2300014: Chair
+    2300016: Commode
+    2300018: Cork
+    2300020: Cylinder001
+    2300022: Dentures
+    2300024: Desk
+    2300026: Door
+    2300028: Glue
+    2300030: Ice
+    2300032: Mini_Table
+    2300034: Moulures
+    2300036: Needle
+    2300038: Paper bag
+    2300040: Pills
+    2300042: Rideaux
+    2300044: Room
+    2300046: Tapis
+    2300048: Thread
+    2300050: Torch
+    2300052: Vase
+    3300000: Bandages
+    3300002: Bed
+    3300004: Cadre001
+    3300006: Cadre002
+    3300008: Cadre003
+    3300010: Cadre004
+    3300012: Cadre005
+    3300014: Chair
+    3300016: Commode
+    3300018: Cork
+    3300020: Cylinder001
+    3300022: Dentures
+    3300024: Desk
+    3300026: Door
+    3300028: Glue
+    3300030: Ice
+    3300032: Mini_Table
+    3300034: Moulures
+    3300036: Needle
+    3300038: Paper bag
+    3300040: Pills
+    3300042: Rideaux
+    3300044: Room
+    3300046: Tapis
+    3300048: Thread
+    3300050: Torch
+    3300052: Vase
+    4300000: Room
+    4300002: Vase
+    4300004: Desk
+    4300006: Bed
+    4300008: Commode
+    4300010: Rideaux
+    4300012: Tapis
+    4300014: Cylinder001
+    4300016: Cadre001
+    4300018: Chair
+    4300020: Pills
+    4300022: Ice
+    4300024: Cork
+    4300026: Bandages
+    4300028: Thread
+    4300030: Needle
+    4300032: Dentures
+    4300034: Paper bag
+    4300036: Glue
+    4300038: Torch
+    4300040: Mini_Table
+    4300042: Door
+    4300044: Moulures
+    4300046: Cadre002
+    4300048: Cadre003
+    4300050: Cadre004
+    4300052: Cadre005
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

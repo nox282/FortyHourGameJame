@@ -1,0 +1,13 @@
+head_cold,blue_pill
+cough,blue_pill
+fever,ice
+vomiting,yellow_pill
+diarrhea,yellow_pill
+blindness,torch
+injured_paw,bandages
+broken_tail,bandages
+deafness,paper_bag
+damaged_teeth,cat_dentures
+hair_loss,glue
+flatulence,cork
+wet,hairdryer

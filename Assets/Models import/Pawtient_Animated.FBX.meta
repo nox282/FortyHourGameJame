@@ -1,0 +1,206 @@
+fileFormatVersion: 2
+guid: e1ec3bfa7532ecd47ac3bcaa684c81da
+timeCreated: 1520712612
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bone_Head
+    100002: Bone_L_Arm01
+    100004: Bone_L_Arm02
+    100006: Bone_L_Clavicle
+    100008: Bone_L_Hand
+    100010: Bone_NEck
+    100012: Bone_Pelvis
+    100014: Bone_R_Arm01
+    100016: Bone_R_Arm02
+    100018: Bone_R_Clavicle
+    100020: Bone_R_Foot
+    100022: Bone_R_Foot001
+    100024: Bone_R_Hand
+    100026: Bone_R_Leg005
+    100028: Bone_R_Leg006
+    100030: Bone_R_Leg007
+    100032: Bone_R_Leg02
+    100034: Bone_R_Leg03
+    100036: Bone_R_Leg04
+    100038: Bone_Spine
+    100040: Bone_Spine01
+    100042: Bone_Spine02
+    100044: Bone_Spine03
+    100046: Bone_Tail01
+    100048: Bone_Tail02
+    100050: Bone_Tail03
+    100052: Bone_Tail04
+    100054: BoneR_Leg002
+    100056: BoneR_Leg01
+    100058: CTRL_L_Clavicle
+    100060: CTRL_L_Elbow
+    100062: CTRL_L_Wrist
+    100064: CTRL_Pelvis01
+    100066: CTRL_R_Clavicle
+    100068: CTRL_R_Elbow
+    100070: CTRL_R_Foot
+    100072: CTRL_R_Foot001
+    100074: CTRL_R_Wrist
+    100076: CTRL_Tail01
+    100078: CTRL_Tail02
+    100080: CTRL_Tail03
+    100082: IK Chain001
+    100084: IK Chain002
+    100086: NUB_Head
+    100088: NUB_L_Arm
+    100090: NUB_L_Hand
+    100092: NUB_Pelvis
+    100094: NUB_R_Arm
+    100096: NUB_R_Foot
+    100098: NUB_R_Foot001
+    100100: NUB_R_Hand
+    100102: NUB_R_Leg
+    100104: NUB_R_Leg001
+    100106: NUB_Spine
+    100108: NUB_Tail
+    100110: Patient_cat
+    100112: //RootNode
+    400000: Bone_Head
+    400002: Bone_L_Arm01
+    400004: Bone_L_Arm02
+    400006: Bone_L_Clavicle
+    400008: Bone_L_Hand
+    400010: Bone_NEck
+    400012: Bone_Pelvis
+    400014: Bone_R_Arm01
+    400016: Bone_R_Arm02
+    400018: Bone_R_Clavicle
+    400020: Bone_R_Foot
+    400022: Bone_R_Foot001
+    400024: Bone_R_Hand
+    400026: Bone_R_Leg005
+    400028: Bone_R_Leg006
+    400030: Bone_R_Leg007
+    400032: Bone_R_Leg02
+    400034: Bone_R_Leg03
+    400036: Bone_R_Leg04
+    400038: Bone_Spine
+    400040: Bone_Spine01
+    400042: Bone_Spine02
+    400044: Bone_Spine03
+    400046: Bone_Tail01
+    400048: Bone_Tail02
+    400050: Bone_Tail03
+    400052: Bone_Tail04
+    400054: BoneR_Leg002
+    400056: BoneR_Leg01
+    400058: CTRL_L_Clavicle
+    400060: CTRL_L_Elbow
+    400062: CTRL_L_Wrist
+    400064: CTRL_Pelvis01
+    400066: CTRL_R_Clavicle
+    400068: CTRL_R_Elbow
+    400070: CTRL_R_Foot
+    400072: CTRL_R_Foot001
+    400074: CTRL_R_Wrist
+    400076: CTRL_Tail01
+    400078: CTRL_Tail02
+    400080: CTRL_Tail03
+    400082: IK Chain001
+    400084: IK Chain002
+    400086: NUB_Head
+    400088: NUB_L_Arm
+    400090: NUB_L_Hand
+    400092: NUB_Pelvis
+    400094: NUB_R_Arm
+    400096: NUB_R_Foot
+    400098: NUB_R_Foot001
+    400100: NUB_R_Hand
+    400102: NUB_R_Leg
+    400104: NUB_R_Leg001
+    400106: NUB_Spine
+    400108: NUB_Tail
+    400110: Patient_cat
+    400112: //RootNode
+    2100000: 'Material #26'
+    4300000: Patient_cat
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Patient_cat
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="128">
+	<RootPaths>
+		<ProjectRoot>/Users/Kyle/Library/Application Support/Wwise2017/Bottles/wwise/dosdevices/y:/Desktop/FortyHourGameJame/FortyHourGameJame_WwiseProject/</ProjectRoot>
+		<SourceFilesRoot>/Users/Kyle/Library/Application Support/Wwise2017/Bottles/wwise/dosdevices/y:/Desktop/FortyHourGameJame/FortyHourGameJame_WwiseProject/.cache/Windows/</SourceFilesRoot>
+		<SoundBanksRoot>/Users/Kyle/Library/Application Support/Wwise2017/Bottles/wwise/dosdevices/y:/Desktop/FortyHourGameJame/FortyHourGameJame_WwiseProject/GeneratedSoundBanks/Windows/</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>/Users/Kyle/Library/Application Support/Wwise2017/Bottles/wwise/dosdevices/y:/Desktop/FortyHourGameJame/FortyHourGameJame_WwiseProject/GeneratedSoundBanks/Windows/</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1211995789" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Soundbnk</ObjectPath>
+			<ShortName>Soundbnk</ShortName>
+			<Path>Soundbnk.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3200958457" Name="Feet" ObjectPath="\Events\Default Work Unit\Feet" MaxAttenuation="100.000000"/>
+				<Event Id="3549217275" Name="Patient_Cough" ObjectPath="\Events\Default Work Unit\Patients\Patient_Cough" MaxAttenuation="100.000000"/>
+				<Event Id="2670306474" Name="Patient_Fart" ObjectPath="\Events\Default Work Unit\Patients\Patient_Fart" MaxAttenuation="100.000000"/>
+				<Event Id="918452968" Name="Patient_Vomit" ObjectPath="\Events\Default Work Unit\Patients\Patient_Vomit" MaxAttenuation="100.000000"/>
+				<Event Id="2229127467" Name="Pickup_Cork" ObjectPath="\Events\Default Work Unit\Pickups\Pickup_Cork"/>
+				<Event Id="217759215" Name="Pickup_Generic" ObjectPath="\Events\Default Work Unit\Pickups\Pickup_Generic"/>
+				<Event Id="1313627535" Name="Pickup_Glue" ObjectPath="\Events\Default Work Unit\Pickups\Pickup_Glue"/>
+				<Event Id="2932040671" Name="Play_Music" ObjectPath="\Events\Default Work Unit\Play_Music"/>
+				<Event Id="3289865841" Name="Player_Failure" ObjectPath="\Events\Default Work Unit\Player_Failure"/>
+				<Event Id="1977201850" Name="Player_Success" ObjectPath="\Events\Default Work Unit\Player_Success"/>
+				<Event Id="63629884" Name="Start_Hairdryer" ObjectPath="\Events\Default Work Unit\Pickups\Hairdryer\Start_Hairdryer" MaxAttenuation="100.000000"/>
+				<Event Id="1425259882" Name="Stop_Hairdryer" ObjectPath="\Events\Default Work Unit\Pickups\Hairdryer\Stop_Hairdryer" MaxAttenuation="100.000000"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="22182930" Language="SFX">
+					<ShortName>Player_Success_05.wav</ShortName>
+					<Path>SFX/Player_Success_05_B95B134F.wem</Path>
+				</File>
+				<File Id="57932552" Language="SFX">
+					<ShortName>Player_Success_11.wav</ShortName>
+					<Path>SFX/Player_Success_11_B95B134F.wem</Path>
+				</File>
+				<File Id="60927784" Language="SFX">
+					<ShortName>Cats_MainTitle.wav</ShortName>
+					<Path>SFX/Cats_MainTitle_A2672D7D.wem</Path>
+				</File>
+				<File Id="67339493" Language="SFX">
+					<ShortName>Player_Success_03.wav</ShortName>
+					<Path>SFX/Player_Success_03_B95B134F.wem</Path>
+				</File>
+				<File Id="79340839" Language="SFX">
+					<ShortName>Player_Fail_08.wav</ShortName>
+					<Path>SFX/Player_Fail_08_B95B134F.wem</Path>
+				</File>
+				<File Id="115679679" Language="SFX">
+					<ShortName>Player_Fail_05.wav</ShortName>
+					<Path>SFX/Player_Fail_05_64F1CA1C.wem</Path>
+				</File>
+				<File Id="116601987" Language="SFX">
+					<ShortName>Player_Success_12.wav</ShortName>
+					<Path>SFX/Player_Success_12_B95B134F.wem</Path>
+				</File>
+				<File Id="170254969" Language="SFX">
+					<ShortName>Flatline\flatline1e.wav</ShortName>
+					<Path>SFX/Flatline/flatline1e_A2672D7D.wem</Path>
+				</File>
+				<File Id="170942105" Language="SFX">
+					<ShortName>Fart_02.wav</ShortName>
+					<Path>SFX/Fart_02_33DAFBB5.wem</Path>
+				</File>
+				<File Id="231290040" Language="SFX">
+					<ShortName>Player_Fail_12.wav</ShortName>
+					<Path>SFX/Player_Fail_12_B95B134F.wem</Path>
+				</File>
+				<File Id="239352540" Language="SFX">
+					<ShortName>Player_Success_13.wav</ShortName>
+					<Path>SFX/Player_Success_13_B95B134F.wem</Path>
+				</File>
+				<File Id="249414424" Language="SFX">
+					<ShortName>Victims\Coughing.wav</ShortName>
+					<Path>SFX/Victims/Coughing_9732E959.wem</Path>
+				</File>
+				<File Id="279085421" Language="SFX">
+					<ShortName>Player_Success_07.wav</ShortName>
+					<Path>SFX/Player_Success_07_B95B134F.wem</Path>
+				</File>
+				<File Id="284303354" Language="SFX">
+					<ShortName>Victims\Wretching.wav</ShortName>
+					<Path>SFX/Victims/Wretching_2D9B3CDC.wem</Path>
+				</File>
+				<File Id="301120773" Language="SFX">
+					<ShortName>Player_Fail_11.wav</ShortName>
+					<Path>SFX/Player_Fail_11_B95B134F.wem</Path>
+				</File>
+				<File Id="309080841" Language="SFX">
+					<ShortName>Catfeet\Catfeet1.wav</ShortName>
+					<Path>SFX/Catfeet/Catfeet1_70C6374A.wem</Path>
+				</File>
+				<File Id="311858724" Language="SFX">
+					<ShortName>Flatline\flatline2.wav</ShortName>
+					<Path>SFX/Flatline/flatline2_A2672D7D.wem</Path>
+				</File>
+				<File Id="313568268" Language="SFX">
+					<ShortName>Cat_Music_01.wav</ShortName>
+					<Path>SFX/Cat_Music_01_A2672D7D.wem</Path>
+				</File>
+				<File Id="322695300" Language="SFX">
+					<ShortName>Player_Success_02.wav</ShortName>
+					<Path>SFX/Player_Success_02_B95B134F.wem</Path>
+				</File>
+				<File Id="355127472" Language="SFX">
+					<ShortName>Cat Saved_01.wav</ShortName>
+					<Path>SFX/Cat Saved_01_B95B134F.wem</Path>
+				</File>
+				<File Id="373590767" Language="SFX">
+					<ShortName>Player_Success_09.wav</ShortName>
+					<Path>SFX/Player_Success_09_B95B134F.wem</Path>
+				</File>
+				<File Id="377968274" Language="SFX">
+					<ShortName>Victims\Wretching.wav</ShortName>
+					<Path>SFX/Victims/Wretching_86EE643D.wem</Path>
+				</File>
+				<File Id="390861189" Language="SFX">
+					<ShortName>Actions\Hairdryer.wav</ShortName>
+					<Path>SFX/Actions/Hairdryer_098A93F2.wem</Path>
+				</File>
+				<File Id="395629788" Language="SFX">
+					<ShortName>Actions\Hairdryer.wav</ShortName>
+					<Path>SFX/Actions/Hairdryer_8685070C.wem</Path>
+				</File>
+				<File Id="396955399" Language="SFX">
+					<ShortName>Flatline\flatline1c.wav</ShortName>
+					<Path>SFX/Flatline/flatline1c_A2672D7D.wem</Path>
+				</File>
+				<File Id="409116630" Language="SFX">
+					<ShortName>Player_Success_14.wav</ShortName>
+					<Path>SFX/Player_Success_14_B95B134F.wem</Path>
+				</File>
+				<File Id="424349606" Language="SFX">
+					<ShortName>Player_Success_04.wav</ShortName>
+					<Path>SFX/Player_Success_04_B95B134F.wem</Path>
+				</File>
+				<File Id="428058463" Language="SFX">
+					<ShortName>Fart_06.wav</ShortName>
+					<Path>SFX/Fart_06_A993DF45.wem</Path>
+				</File>
+				<File Id="435812243" Language="SFX">
+					<ShortName>Actions\Pills.wav</ShortName>
+					<Path>SFX/Actions/Pills_A23A3154.wem</Path>
+				</File>
+				<File Id="452253174" Language="SFX">
+					<ShortName>Player_Success_08.wav</ShortName>
+					<Path>SFX/Player_Success_08_B95B134F.wem</Path>
+				</File>
+				<File Id="477696010" Language="SFX">
+					<ShortName>Actions\Cork.wav</ShortName>
+					<Path>SFX/Actions/Cork_B95B134F.wem</Path>
+				</File>
+				<File Id="553003786" Language="SFX">
+					<ShortName>Flatline\flatline1b.wav</ShortName>
+					<Path>SFX/Flatline/flatline1b_A2672D7D.wem</Path>
+				</File>
+				<File Id="558222155" Language="SFX">
+					<ShortName>Victims\Wretching.wav</ShortName>
+					<Path>SFX/Victims/Wretching_40314BA2.wem</Path>
+				</File>
+				<File Id="564322928" Language="SFX">
+					<ShortName>Fart_08.wav</ShortName>
+					<Path>SFX/Fart_08_B942755A.wem</Path>
+				</File>
+				<File Id="568111304" Language="SFX">
+					<ShortName>Catfeet\catfeet3.wav</ShortName>
+					<Path>SFX/Catfeet/catfeet3_EF291AAE.wem</Path>
+				</File>
+				<File Id="618064879" Language="SFX">
+					<ShortName>Fart_03.wav</ShortName>
+					<Path>SFX/Fart_03_8E411E3F.wem</Path>
+				</File>
+				<File Id="643082199" Language="SFX">
+					<ShortName>Catfeet\catfeet4.wav</ShortName>
+					<Path>SFX/Catfeet/catfeet4_65F92ED3.wem</Path>
+				</File>
+				<File Id="656306486" Language="SFX">
+					<ShortName>Flatline\flatline1a.wav</ShortName>
+					<Path>SFX/Flatline/flatline1a_A2672D7D.wem</Path>
+				</File>
+				<File Id="660958297" Language="SFX">
+					<ShortName>Player_Fail_02.wav</ShortName>
+					<Path>SFX/Player_Fail_02_B95B134F.wem</Path>
+				</File>
+				<File Id="668940665" Language="SFX">
+					<ShortName>Victims\Wretching.wav</ShortName>
+					<Path>SFX/Victims/Wretching_705A0ACA.wem</Path>
+				</File>
+				<File Id="669727910" Language="SFX">
+					<ShortName>Catfeet\catfeet2wav.wav</ShortName>
+					<Path>SFX/Catfeet/catfeet2wav_020A72F1.wem</Path>
+				</File>
+				<File Id="671403137" Language="SFX">
+					<ShortName>Victims\Coughing.wav</ShortName>
+					<Path>SFX/Victims/Coughing_A1FF889C.wem</Path>
+				</File>
+				<File Id="681067580" Language="SFX">
+					<ShortName>Player_Fail_06.wav</ShortName>
+					<Path>SFX/Player_Fail_06_6339BF82.wem</Path>
+				</File>
+				<File Id="697992013" Language="SFX">
+					<ShortName>Catfeet\catfeet5.wav</ShortName>
+					<Path>SFX/Catfeet/catfeet5_A1FE3B0D.wem</Path>
+				</File>
+				<File Id="758342291" Language="SFX">
+					<ShortName>Fart_01.wav</ShortName>
+					<Path>SFX/Fart_01_AB0C300F.wem</Path>
+				</File>
+				<File Id="771583909" Language="SFX">
+					<ShortName>Player_Fail_03.wav</ShortName>
+					<Path>SFX/Player_Fail_03_B95B134F.wem</Path>
+				</File>
+				<File Id="775747653" Language="SFX">
+					<ShortName>Victims\Coughing.wav</ShortName>
+					<Path>SFX/Victims/Coughing_9C9BEFF0.wem</Path>
+				</File>
+				<File Id="780615201" Language="SFX">
+					<ShortName>Player_Success_01.wav</ShortName>
+					<Path>SFX/Player_Success_01_B95B134F.wem</Path>
+				</File>
+				<File Id="797323578" Language="SFX">
+					<ShortName>Actions\Glue.wav</ShortName>
+					<Path>SFX/Actions/Glue_F2A9F753.wem</Path>
+				</File>
+				<File Id="798491742" Language="SFX">
+					<ShortName>Cat Ded_01.wav</ShortName>
+					<Path>SFX/Cat Ded_01_6C140148.wem</Path>
+				</File>
+				<File Id="854854619" Language="SFX">
+					<ShortName>Fart_05.wav</ShortName>
+					<Path>SFX/Fart_05_BB0121F6.wem</Path>
+				</File>
+				<File Id="876234587" Language="SFX">
+					<ShortName>Fart_10.wav</ShortName>
+					<Path>SFX/Fart_10_AD871A43.wem</Path>
+				</File>
+				<File Id="881014296" Language="SFX">
+					<ShortName>Fart_04.wav</ShortName>
+					<Path>SFX/Fart_04_7AF86C60.wem</Path>
+				</File>
+				<File Id="885052381" Language="SFX">
+					<ShortName>Player_Fail_01.wav</ShortName>
+					<Path>SFX/Player_Fail_01_6775F0C6.wem</Path>
+				</File>
+				<File Id="905382793" Language="SFX">
+					<ShortName>Player_Success_10.wav</ShortName>
+					<Path>SFX/Player_Success_10_B95B134F.wem</Path>
+				</File>
+				<File Id="934696640" Language="SFX">
+					<ShortName>Player_Fail_10.wav</ShortName>
+					<Path>SFX/Player_Fail_10_B95B134F.wem</Path>
+				</File>
+				<File Id="946357943" Language="SFX">
+					<ShortName>Victims\Coughing.wav</ShortName>
+					<Path>SFX/Victims/Coughing_110CADDC.wem</Path>
+				</File>
+				<File Id="955016750" Language="SFX">
+					<ShortName>Player_Fail_07.wav</ShortName>
+					<Path>SFX/Player_Fail_07_B95B134F.wem</Path>
+				</File>
+				<File Id="956619673" Language="SFX">
+					<ShortName>Player_Fail_04.wav</ShortName>
+					<Path>SFX/Player_Fail_04_B95B134F.wem</Path>
+				</File>
+				<File Id="960992097" Language="SFX">
+					<ShortName>Flatline\flatline1d.wav</ShortName>
+					<Path>SFX/Flatline/flatline1d_A2672D7D.wem</Path>
+				</File>
+				<File Id="981881136" Language="SFX">
+					<ShortName>Player_Fail_09.wav</ShortName>
+					<Path>SFX/Player_Fail_09_6ACAB938.wem</Path>
+				</File>
+				<File Id="996027806" Language="SFX">
+					<ShortName>Fart_07.wav</ShortName>
+					<Path>SFX/Fart_07_E6A536EC.wem</Path>
+				</File>
+				<File Id="1018076581" Language="SFX">
+					<ShortName>Actions\Hairdryer.wav</ShortName>
+					<Path>SFX/Actions/Hairdryer_8E39DEE8.wem</Path>
+				</File>
+				<File Id="1018859433" Language="SFX">
+					<ShortName>Fart_09.wav</ShortName>
+					<Path>SFX/Fart_09_DBEA018F.wem</Path>
+				</File>
+				<File Id="1023435092" Language="SFX">
+					<ShortName>Player_Success_06.wav</ShortName>
+					<Path>SFX/Player_Success_06_B95B134F.wem</Path>
+				</File>
+				<File Id="1069654371" Language="SFX">
+					<ShortName>Victims\Coughing.wav</ShortName>
+					<Path>SFX/Victims/Coughing_C651D172.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>
