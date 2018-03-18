@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="128">
 	<RootPaths>
-		<ProjectRoot>C:\Repository\FortyHourGameJame\FortyHourGameJame_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>C:\Repository\FortyHourGameJame\FortyHourGameJame_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Repository\FortyHourGameJame\FortyHourGameJame_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\Clem\workspace\Unity\FortyHourGameJame\FortyHourGameJame_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Clem\workspace\Unity\FortyHourGameJame\FortyHourGameJame_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Clem\workspace\Unity\FortyHourGameJame\FortyHourGameJame_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Repository\FortyHourGameJame\FortyHourGameJame_WwiseProject\GeneratedSoundBanks\Windows\</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\Clem\workspace\Unity\FortyHourGameJame\FortyHourGameJame_WwiseProject\GeneratedSoundBanks\Windows\</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>

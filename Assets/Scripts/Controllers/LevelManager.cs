@@ -11,6 +11,8 @@ public class LevelManager : MonoBehaviour {
 
     void Awake() {
         DontDestroyOnLoad(transform.gameObject);
+
+        wwInterface = GetComponent<WwiseInterface>();
     }
     
     public void LoadNextStage() {
