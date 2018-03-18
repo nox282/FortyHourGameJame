@@ -100,8 +100,8 @@ public class TutorialController : MonoBehaviour
     {
         Text speechText = GameObject.FindGameObjectWithTag("Speech").GetComponent<Text>();
 
-        speechText.text = "In ‘Cat-tastrophe!’, you are a doctor charged with treating your patients as fast as you can.\n" +
-            "Your patients are very sick though and will only survive for 10 more seconds without your help!";
+        speechText.text = "In ‘Cat-tastrophe!’, you are a doctor\ncharged with treating your patients as fast as you can.\n" +
+            "Your patients are very sick and will only survive for 10 more seconds without your help!";
 
         return true;
     }
