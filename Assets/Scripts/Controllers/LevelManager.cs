@@ -16,11 +16,12 @@ public class LevelManager : MonoBehaviour {
     }
     
     public void LoadNextStage() {
-        wwInterface.setState("Game_Start", "Gameplay");
-        wwInterface.callEvent("Play_Music");
-
         if (currentStage < 5) {
             SceneManager.LoadScene("Stage" + ++currentStage);
+
+            wwInterface.setState("Game_Start", "Gameplay");
+            wwInterface.callEvent("Play_Music");
+
             GameObject.FindObjectOfType<SymptomsList>().stage = currentStage;
         } else
             SceneManager.LoadScene("Win");

@@ -9,6 +9,7 @@ public class TutorialController : MonoBehaviour
     public Vector3 spawnLocation;
     public GameObject patientPrefab;
 
+    // UI panels
     public GameObject mainSpeech;
     public GameObject timerLegend;
     public GameObject curesLegend;
@@ -18,12 +19,17 @@ public class TutorialController : MonoBehaviour
 
     public List<Bed> beds;
     public List<GameObject> items;
-
+    
     public int step = 0;
     public bool stepIsComplete = true;
 
     private Dictionary<int, Symptom> symptomsBank;
     private List<GameObject> patients;
+
+    private string item1;
+    private string item2;
+    private string item3;
+    private string item4;
 
 	
 	void Start ()
@@ -35,6 +41,12 @@ public class TutorialController : MonoBehaviour
         symptomsBank.Add(1, new Symptom("Cough", SearchItem("Blue pill"), 0));
         symptomsBank.Add(2, new Symptom("Fever", SearchItem("Ice"), 0));
         symptomsBank.Add(3, new Symptom("Wet", SearchItem("Hairdryer"), 0));
+
+        PlayerController player = FindObjectOfType<PlayerController>();
+        item1 = player.slot1.ToString().Replace("Alpha", "");
+        item2 = player.slot2.ToString().Replace("Alpha", "");
+        item3 = player.slot3.ToString().Replace("Alpha", "");
+        item4 = player.slot4.ToString().Replace("Alpha", "");
     }
 
     private Item SearchItem(string name)
@@ -55,7 +67,11 @@ public class TutorialController : MonoBehaviour
         {
             step++;
             stepIsComplete = UpdateSpeech();
-        }            
+        }
+        else if (Input.GetKeyDown(KeyCode.F1))
+        {
+            FindObjectOfType<LevelManager>().LoadNextStage();
+        }
     }
 
 
@@ -153,7 +169,10 @@ public class TutorialController : MonoBehaviour
         mainSpeech.SetActive(true);
 
         Text speechText = GameObject.FindGameObjectWithTag("Speech").GetComponent<Text>();
-        speechText.text = "To pick up your tools press the 1,2,3, and 4 to assign them to the correlating slot in your inventory.";
+
+        
+        speechText.text = "To pick up your tools, press " + item1 + ", " + item2 + ", " + 
+            item3 + ", or " + item4 + " to assign them to the correlating slot in your inventory.";
         
         return true;
     }
@@ -179,7 +198,8 @@ public class TutorialController : MonoBehaviour
         mainSpeech.SetActive(true);
 
         Text speechText = GameObject.FindGameObjectWithTag("Speech").GetComponent<Text>();
-        speechText.text = "Time to save a life! Move next to the patient's bed, and press the 1,2,3 or 4 to give them the pills.";
+        speechText.text = "Time to save a life! Move next to the patient's bed, and press " + 
+            item1 + ", " + item2 + ", " + item3 + ", or " + item4 + " to give them the pills.";
 
         return true;
     }
