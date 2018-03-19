@@ -6,6 +6,9 @@ TagManager:
   tags:
   - PickUp
   - Use
+  - Speech
+  - Timer
+  - Arrow
   layers:
   - Default
   - TransparentFX
