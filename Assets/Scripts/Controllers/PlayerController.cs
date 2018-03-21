@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
     public Item currentItem;
     public Patient currentPatientTarget;
     public Bed currentBed;
+    private UIController uiController;
 
     public bool inTutorial = false;
 
@@ -52,7 +53,8 @@ public class PlayerController : MonoBehaviour
         movement = new Vector3(0, 0, 0);
         isDashing = false;
         inventory = new Item[4];
-	}
+        uiController = GameObject.FindObjectOfType<UIController>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -158,6 +160,7 @@ public class PlayerController : MonoBehaviour
         if (currentItem)
         {
             inventory[slot - 1] = currentItem;
+            uiController.OnItemReceived(slot, currentItem);
 
             if (inTutorial)
             {
