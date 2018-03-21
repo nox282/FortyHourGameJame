@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4509897554326474}
   - component: {fileID: 114277387838029262}
   m_Layer: 0
-  m_Name: Thread
+  m_Name: thread
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,5 +124,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Thread
-  icon: {fileID: 0}
   duration: 5

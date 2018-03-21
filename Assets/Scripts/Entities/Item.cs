@@ -5,6 +5,5 @@ using UnityEngine.UI;
 
 public class Item : MonoBehaviour {
     public string itemName;
-    public Image icon;
     public float duration; 
 }

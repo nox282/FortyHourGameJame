@@ -23,8 +23,8 @@ public class TutorialController : MonoBehaviour
     public int step = 0;
     public bool stepIsComplete = true;
 
-    private Dictionary<int, Symptom> symptomsBank;
-    private List<GameObject> patients;
+    private GameObject symptom;
+    private GameObject patient;
 
     private string item1;
     private string item2;
@@ -34,14 +34,6 @@ public class TutorialController : MonoBehaviour
 	
 	void Start ()
     {
-        patients = new List<GameObject>();
-
-        symptomsBank = new Dictionary<int, Symptom>();
-        symptomsBank.Add(0, new Symptom("Head cold", SearchItem("Blue pill"), 0));
-        symptomsBank.Add(1, new Symptom("Cough", SearchItem("Blue pill"), 0));
-        symptomsBank.Add(2, new Symptom("Fever", SearchItem("Ice"), 0));
-        symptomsBank.Add(3, new Symptom("Wet", SearchItem("Hairdryer"), 0));
-
         PlayerController player = FindObjectOfType<PlayerController>();
         item1 = player.slot1.ToString().Replace("Alpha", "");
         item2 = player.slot2.ToString().Replace("Alpha", "");
@@ -124,9 +116,7 @@ public class TutorialController : MonoBehaviour
 
     private bool Step2()
     {
-        List<Symptom> symptoms = new List<Symptom>(1);
-        symptoms.Add(symptomsBank[1]);
-        SpawnPatient(symptoms);
+        SpawnPatient();
 
         Text speechText = GameObject.FindGameObjectWithTag("Speech").GetComponent<Text>();
         speechText.text = "Look! A patient has just arrived. Let’s go have a look and see what’s making them so pawly.";
@@ -273,14 +263,13 @@ public class TutorialController : MonoBehaviour
         return true;
     }
 
-    private void SpawnPatient(List<Symptom> symptoms)
+    private void SpawnPatient()
     {
         GameObject patientObject = Instantiate(patientPrefab, spawnLocation, Quaternion.identity) as GameObject;
-        patientObject.GetComponent<Patient>().SetSymptoms(symptoms);
+        patientObject.GetComponent<Patient>().AddSymptom(symptom.GetComponent<Symptom>());
 
         Patient patient = patientObject.GetComponent<Patient>();
         patient.inTutorial = true;
-        patients.Add(patientObject);
 
         Bed bed = beds[0];
         patientObject.transform.position = bed.transform.position;

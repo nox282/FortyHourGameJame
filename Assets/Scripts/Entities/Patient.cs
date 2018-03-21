@@ -85,7 +85,7 @@ public class Patient : MonoBehaviour
         {
             foreach (Symptom symptom in symptoms)
             {
-                if (string.Equals(symptom.GetCure().itemName, item.itemName))
+                if (string.Equals(symptom.cure.GetComponent<Item>().itemName, item.itemName))
                 {
                     StartCoroutine(ApplyTreatment(symptom));
                     break;
@@ -101,7 +101,7 @@ public class Patient : MonoBehaviour
     public string GetStringOfSymptoms() {
         string str = "";
         foreach (Symptom s in symptoms)
-            str += s.GetName() + ", ";
+            str += s.name + ", ";
 
         return str;
     }
@@ -120,27 +120,21 @@ public class Patient : MonoBehaviour
     {
         return pronouncedDead;
     }
-
-    public void PrintSymptoms()
-    {
-        foreach (Symptom s in symptoms)
-            Debug.Log(s.GetName());
-    }
-
+    
     private IEnumerator ApplyTreatment(Symptom symptom)
     {
-        Debug.Log("treating: " + symptom.GetName() + " - " + symptom.GetCure().duration);
+        Debug.Log("treating: " + symptom.name + " - " + symptom.cure.GetComponent<Item>().duration);
         treating = true;
 
-        yield return new WaitForSeconds(symptom.GetCure().duration);
+        yield return new WaitForSeconds(symptom.cure.GetComponent<Item>().duration);
 
-        score += symptom.GetPoints();
+        score += symptom.points;
         symptoms.Remove(symptom);
 
-        Debug.Log("Treatment for " + symptom.GetName() + " over");
+        Debug.Log("Treatment for " + symptom.name + " over");
         treating = false;
 
-        switch (symptom.GetCure().itemName)
+        switch (symptom.cure.GetComponent<Item>().itemName)
         {
             case "ice":
                 symptoms.Add(GameObject.FindObjectOfType<DataBank>().GetSymptom("wet"));
@@ -190,7 +184,7 @@ public class Patient : MonoBehaviour
             foreach (Symptom s in GetSymptoms()) {
                 if (i < popUpsOffset.Length) {
                     Vector2 pos = Camera.main.WorldToScreenPoint(transform.position + popUpsOffset[i++]);
-                    GUI.Box(new Rect(pos.x, Screen.height - pos.y, 100f, 25f), s.GetName());
+                    GUI.Box(new Rect(pos.x, Screen.height - pos.y, 100f, 25f), s.name);
                 }
             }
         }

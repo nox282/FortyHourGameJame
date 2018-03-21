@@ -22,7 +22,7 @@ public class LevelManager : MonoBehaviour {
             wwInterface.setState("Game_Start", "Gameplay");
             wwInterface.callEvent("Play_Music");
 
-            GameObject.FindObjectOfType<SymptomsList>().stage = currentStage;
+            GameObject.FindObjectOfType<DataBank>().stage = currentStage;
         } else
             SceneManager.LoadScene("Win");
     }

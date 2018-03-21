@@ -25,7 +25,7 @@ public class PatientFactory : MonoBehaviour
             }
             while (assignedSymptoms.Contains(symptomIndex));
              
-            patient.GetComponent<Patient>().AddSymptom(bank.symptoms[symptomIndex]);
+            patient.GetComponent<Patient>().AddSymptom(bank.symptoms[symptomIndex].GetComponent<Symptom>());
         }
 
         return patient;
