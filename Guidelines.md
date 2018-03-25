@@ -1,6 +1,6 @@
 # GameJam Guidelines - Using Unity and Wwise
 1. [Git](#git)
-2. [Coding (C#)](#coding-(C#))
+2. [Coding (C#)](#coding-c)
 3. [Unity](#unity)
 4. [Unity UI](#unity-ui)
 ## Git
