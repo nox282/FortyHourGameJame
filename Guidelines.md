@@ -1,4 +1,8 @@
 # GameJam Guidelines - Using Unity and Wwise
+1. [Git](#Git)
+2. [Coding (C#)](#Coding-(C#))
+3. [Unity](#Unity)
+4. [Unity UI](#Unity-UI)
 ## Git
 - One feature branch -> One Unity scene
 - Three `develop` branches :
@@ -48,8 +52,9 @@ public class GameManager : Monobehaviour {
 	3. Rename new one as desired
 - Organize the prefab folder into subcategories folder
 - When creating a GameObject, dont forget to reset its transform component
-## Unity - UI
+## Unity UI
 - Use empty GameObjects as containers for your UI elements
 - Use a `Canvas Scaler` component in the top level UI GameObject with `UI Scale Mode` set to `Scale With Screen Size` 
 - Use anchors to place the container GameObject, then adjust the contained GameObjects using the center anchor
 - Try to refrain from using editor initialization when setting public attributes on UI Controllers script. Use the the `GameObject.FindObject` instead
+- 
