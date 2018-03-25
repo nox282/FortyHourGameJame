@@ -6,6 +6,8 @@ TagManager:
   tags:
   - PickUp
   - Use
+  - ItemIcon
+  - SymptomIcon
   layers:
   - Default
   - TransparentFX
