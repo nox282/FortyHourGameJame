@@ -1,8 +1,8 @@
 # GameJam Guidelines - Using Unity and Wwise
-1. [Git](#Git)
-2. [Coding (C#)](#Coding-(C#))
-3. [Unity](#Unity)
-4. [Unity UI](#Unity-UI)
+1. [Git](#git)
+2. [Coding (C#)](#coding-(C#))
+3. [Unity](#unity)
+4. [Unity UI](#unity-ui)
 ## Git
 - One feature branch -> One Unity scene
 - Three `develop` branches :
