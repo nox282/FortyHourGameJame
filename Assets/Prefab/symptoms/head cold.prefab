@@ -51,6 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613e343a6930f0b43a63f960291ed8fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  symptomName: Head Cold
+  symptomName: Head cold
   cure: {fileID: 1442623144177898, guid: 11d24ecfcfe126f418c0c481bce6348e, type: 2}
   points: 0

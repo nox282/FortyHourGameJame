@@ -19,7 +19,16 @@ public class UIController : MonoBehaviour {
             ItemIcons = new List<Image>();
             foreach (var i in icons)
                 ItemIcons.Add(i.GetComponent<Image>());
-        } 
+        }
+
+        DataBank data = GameObject.FindObjectOfType<DataBank>();
+        SetSymptoms(data.symptoms);
+    }
+
+    private void SetSymptoms(List<GameObject> symptoms) {
+        RecipesUIController recipes = GetComponentInChildren<RecipesUIController>();
+        foreach (GameObject s in symptoms)
+            recipes.SetRecipe(s.GetComponent<Symptom>());
     }
 
     public void DisplayControls(bool xboxControls) {
