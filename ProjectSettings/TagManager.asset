@@ -9,6 +9,8 @@ TagManager:
   - Speech
   - Timer
   - Arrow
+  - ItemIcon
+  - SymptomIcon
   layers:
   - Default
   - TransparentFX

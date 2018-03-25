@@ -25,11 +25,13 @@ public class PlayerController : MonoBehaviour
     public KeyCode slot3;
     public KeyCode slot4;
     public KeyCode dismiss;
+    public KeyCode pause;
 
     // Components
     private Rigidbody body;
     public Item[] inventory;
     private Animator anim;
+    public bool isPaused;
 
     private Vector3 movement;
     public bool isDashing;
@@ -41,6 +43,7 @@ public class PlayerController : MonoBehaviour
     public Item currentItem;
     public Patient currentPatientTarget;
     public Bed currentBed;
+    private UIController uiController;
 
     public bool inTutorial = false;
 
@@ -52,18 +55,19 @@ public class PlayerController : MonoBehaviour
         movement = new Vector3(0, 0, 0);
         isDashing = false;
         inventory = new Item[4];
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        CheckForInputs();
-        
-        if (!IsPickingUp() && !isTreating)
-        {
-            anim.SetBool("isMoving", IsMoving());
-            ApplyMovement();
+        uiController = GameObject.FindObjectOfType<UIController>();
+    }
+
+    // Update is called once per frame
+    void Update() {
+        if (!isPaused) {
+            CheckForInputs();
+
+            if (!IsPickingUp() && !isTreating) {
+                anim.SetBool("isMoving", IsMoving());
+                ApplyMovement();
+            }
         }
-        
     }
     bool IsPickingUp() {
         return anim.GetCurrentAnimatorStateInfo(0).IsName("PickUp");
@@ -158,6 +162,7 @@ public class PlayerController : MonoBehaviour
         if (currentItem)
         {
             inventory[slot - 1] = currentItem;
+            uiController.OnItemReceived(slot, currentItem);
 
             if (inTutorial)
             {

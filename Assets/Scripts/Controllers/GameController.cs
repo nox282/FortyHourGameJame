@@ -17,6 +17,8 @@ public class GameController : MonoBehaviour
     public float stageDuration = 120;
     public int deadAllowed = 4;
     public int maxPatientInClinic = 6;
+    public bool isPaused;
+    public KeyCode pauseKey;
 
     // Containers
     public PatientFactory patientFactory;
@@ -24,10 +26,11 @@ public class GameController : MonoBehaviour
     public Dictionary<int, GameObject> patientList;
     public List<Bed> bedList;
     public List<int> availableBeds = new List<int>();
+    public GameObject PauseUILayer;
 
+    private float spawnTimer;
     private int deadPatients = 0;
     private int score = 0;
-
 
     void Start()
     {
@@ -40,7 +43,18 @@ public class GameController : MonoBehaviour
         for (int i = 0; i < maxPatientInClinic; i++)
             availableBeds.Add(i);
 
+        // Set input keycode for pause
+        pauseKey = GameObject.FindObjectOfType<PlayerController>().pause;
+
+        SetPauseState(false);
         StartCoroutine(StartLevel());
+    }
+
+    public void Update() {
+        if (!isPaused) {
+            if (Input.GetKey(pauseKey))
+                SetPauseState(!isPaused);
+        }
     }
 
     private IEnumerator StartLevel()
@@ -60,33 +74,33 @@ public class GameController : MonoBehaviour
     {
         while (true)
         {
-            // Spawn new patient in waiting room
-            waitingRoom.Add(patientFactory.CreatePatient(spawnLocation));
-            Debug.Log(waitingRoom.Count);
+            if (!IsPaused() && spawnTimer >= spawnRate) {
+                spawnTimer = 0.0f;
+                // Spawn new patient in waiting room
+                waitingRoom.Add(patientFactory.CreatePatient(spawnLocation));
+                Debug.Log(waitingRoom.Count);
 
-            // Fill up clinic
-            if (patientList.Count < maxPatientInClinic)
-            {
-                // Select bed number randomly
-                int index = 0;
+                // Fill up clinic
+                if (patientList.Count < maxPatientInClinic) {
+                    // Select bed number randomly
+                    int index = 0;
 
-                do
-                {
-                    index = availableBeds[Random.Range(0, availableBeds.Count - 1)];
+                    do {
+                        index = availableBeds[Random.Range(0, availableBeds.Count - 1)];
+                    }
+                    while (bedList[index].isOccupied);
+
+                    GameObject patientObject = GetAliveWaitingPatient();
+
+                    if (patientObject != null) {
+                        Debug.Log(index);
+                        // Admit patient into clinic and take them to the first unoccupied bed
+                        AdmitPatient(index, bedList[index], patientObject);
+                    }
                 }
-                while (bedList[index].isOccupied);
-
-                GameObject patientObject = GetAliveWaitingPatient();
-
-                if (patientObject != null)
-                {
-                    Debug.Log(index);
-                    // Admit patient into clinic and take them to the first unoccupied bed
-                    AdmitPatient(index, bedList[index], patientObject);
-                }
+                spawnTimer++;
             }
-
-            yield return new WaitForSeconds(spawnRate);
+            yield return new WaitForSeconds(1);
         }
     }
 
@@ -202,5 +216,33 @@ public class GameController : MonoBehaviour
         }
 
         DestroyObject(patient);
+    }
+    
+    public void SetPauseState(bool pauseState) {
+        GameController instance = GameObject.FindObjectOfType<GameController>();
+        instance.SetPauseStateForPlayer(pauseState);
+        instance.SetPauseStateForPatient(pauseState);
+        instance.PauseUILayer.SetActive(pauseState);
+        
+        instance.isPaused = pauseState;
+    }
+
+    private void SetPauseStateForPlayer(bool pauseState) {
+        GameObject.FindObjectOfType<PlayerController>().isPaused = pauseState;
+    }
+
+    private void SetPauseStateForPatient(bool pauseState) {
+        
+        // in waiting room
+        foreach (GameObject patient in waitingRoom)
+            patient.GetComponent<Patient>().isPaused = pauseState;
+        
+        // in clinic
+        foreach (KeyValuePair<int, GameObject> patient in patientList)
+            patient.Value.GetComponent<Patient>().isPaused = pauseState;
+    }
+
+    private bool IsPaused() {
+        return isPaused;
     }
 }
