@@ -22,6 +22,7 @@ public class Patient : MonoBehaviour
     private bool treating = false;
     private bool pronouncedDead = false;
     public bool inTutorial = false;
+    public bool isPaused = false;
 
     private List<Symptom> symptoms = new List<Symptom>();
 
@@ -46,8 +47,13 @@ public class Patient : MonoBehaviour
         while (timeLeft > 0)
         {
             yield return new WaitForSeconds(1);
-            timeLeft--;
+            if(!IsPaused())
+                timeLeft--;
         }
+    }
+
+    private bool IsPaused() {
+        return isPaused;
     }
 
     void Update()

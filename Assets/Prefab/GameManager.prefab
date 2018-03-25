@@ -142,18 +142,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
-  - {fileID: 1188461302134080, guid: 1d592bb625ddc3745b10874f3cb4f333, type: 2}
-  - {fileID: 1114686271930248, guid: 11d24ecfcfe126f418c0c481bce6348e, type: 2}
-  - {fileID: 1289605985496454, guid: c76757c4a37772d48866a242d3f5ec23, type: 2}
-  - {fileID: 1284415642588404, guid: 6e6f3195ab434054592157bf97256684, type: 2}
-  - {fileID: 1336011735106308, guid: a31cb3482423c764da0902a27a2ee364, type: 2}
-  - {fileID: 1429869889459138, guid: 1e3be07433e79cd41912238badb18db5, type: 2}
-  - {fileID: 1073236433632702, guid: ba7877aed877f37489703c93abdc78a2, type: 2}
-  - {fileID: 1100681988743412, guid: 66c8b5a1a67520a42a269e6160ace67b, type: 2}
-  - {fileID: 1701012661478310, guid: 4319537fa5e53ec489a975ccb880f9b7, type: 2}
-  - {fileID: 1869449720214386, guid: 23be510277291604dad40973dcc690b0, type: 2}
-  - {fileID: 1032799838803192, guid: 7ec70b40f1368da43a5ddb09a6268de3, type: 2}
-  - {fileID: 1798890872585192, guid: 309e188421bd16948b68904c31fa7389, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   symptomsList: {fileID: 114603212700947698}
 --- !u!114 &114455756977228458
 MonoBehaviour:
@@ -170,12 +170,15 @@ MonoBehaviour:
   deadAllowed_ui: {fileID: 0}
   spawnRate: 10
   spawnLocation: {x: 10, y: 10, z: 10}
+  bedOffset: {x: 0, y: 0, z: 0}
+  inversedBedOffset: {x: 0, y: 0, z: 0}
   stageDuration: 120
   deadAllowed: 4
   maxPatientInClinic: 6
+  isPaused: 0
+  pauseKey: 0
   patientFactory: {fileID: 114948254664803262}
   waitingRoom: []
-  patientList: []
   bedList:
   - {fileID: 0}
   - {fileID: 0}
@@ -183,6 +186,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  availableBeds: 
+  PauseUILayer: {fileID: 0}
 --- !u!114 &114603212700947698
 MonoBehaviour:
   m_ObjectHideFlags: 1

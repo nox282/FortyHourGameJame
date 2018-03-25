@@ -25,11 +25,13 @@ public class PlayerController : MonoBehaviour
     public KeyCode slot3;
     public KeyCode slot4;
     public KeyCode dismiss;
+    public KeyCode pause;
 
     // Components
     private Rigidbody body;
     public Item[] inventory;
     private Animator anim;
+    public bool isPaused;
 
     private Vector3 movement;
     public bool isDashing;
@@ -55,17 +57,17 @@ public class PlayerController : MonoBehaviour
         inventory = new Item[4];
         uiController = GameObject.FindObjectOfType<UIController>();
     }
-	
-	// Update is called once per frame
-	void Update () {
-        CheckForInputs();
-        
-        if (!IsPickingUp() && !isTreating)
-        {
-            anim.SetBool("isMoving", IsMoving());
-            ApplyMovement();
+
+    // Update is called once per frame
+    void Update() {
+        if (!isPaused) {
+            CheckForInputs();
+
+            if (!IsPickingUp() && !isTreating) {
+                anim.SetBool("isMoving", IsMoving());
+                ApplyMovement();
+            }
         }
-        
     }
     bool IsPickingUp() {
         return anim.GetCurrentAnimatorStateInfo(0).IsName("PickUp");
