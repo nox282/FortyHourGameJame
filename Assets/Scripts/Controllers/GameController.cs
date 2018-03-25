@@ -51,10 +51,8 @@ public class GameController : MonoBehaviour
     }
 
     public void Update() {
-        if (!isPaused) {
-            if (Input.GetKey(pauseKey))
-                SetPauseState(!isPaused);
-        }
+        if (Input.GetKeyDown(pauseKey))
+            SetPauseState(!isPaused);    
     }
 
     private IEnumerator StartLevel()
@@ -98,8 +96,8 @@ public class GameController : MonoBehaviour
                         AdmitPatient(index, bedList[index], patientObject);
                     }
                 }
-                spawnTimer++;
             }
+            spawnTimer++;
             yield return new WaitForSeconds(1);
         }
     }
