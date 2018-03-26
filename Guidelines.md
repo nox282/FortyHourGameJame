@@ -49,6 +49,9 @@ public class GameManager : Monobehaviour {
 - When refering to a singleton, use `GameObject.FindObjectOfType<T>()` in `public void Start()` to retrieve the instance, try to not rely on editor initialization (drag and dropping a GameObject reference in a public attribute) where possible
 - Use `CamelCase` for **class**, **attribute**, and **methods**
 - Use `camelCase` for **local variable**
+- Log wisely with comments
+	- Bad Example : `Debug.Log(waitingRoom.Count);`
+	- Good Exemple : `Debug.Log(waitingRoom.Count + "patient currently waiting in the Waiting Room.");`
 ## Unity
 - Every element of a scene should be in a prefab, even if there is only one instance of it
 - When developing a scene element, only the **top level** GameObject should require attributes initialization from other GameObjects in the scene
