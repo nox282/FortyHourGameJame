@@ -12,10 +12,14 @@
 - Make sure your Editor project settings are set to `force text` for Asset Serialization
 - Use  [this](https://pastebin.com/8pkAUhfW) `.gitignore` file
 - When Merging feature branch to any `develop` branch, use this procedure : 
-	1. Branch `ours` into `ours_copy`
-	2. Merge `theirs` into `ours_copy`
+	1. Branch `ours` into `ours_copy` 
+		-> `git checkout -b ours_copy`
+	2. Merge `theirs` into `ours_copy` 
+		-> `git merge theirs`
 	3. Open and build the Unity project, make sure everything is as excepted
 	4. Merge `ours_copy` in `ours`, using `git merge branch_name -X theirs` if necessary
+		-> `git checkout ours && git merge ours_copy`
+		OR `git checkout ours && git merge ours_copy -X theirs`
 	5. Add new prefabs into desired scene where applicable
 - You can use `git merge --abort` if you need to step back from a merge
 ## Coding (C#)
