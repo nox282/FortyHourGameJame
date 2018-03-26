@@ -24,8 +24,10 @@
 - When declaring a lot of attributes, sort them in sections highlighted by comment lines
 - Document what public attributes shall be initialized by what GameObjects in Unity editor
 - Where applicable, Coroutines that use `WaitForSeconds(float)` should use this pattern : 
-`timer++;`
-`yield return new WaitForSeconds(1.0f);`
+```
+timer++;
+yield return new WaitForSeconds(1.0f);
+```
 - Avoid fancy Polymorphism
 - Implement the singleton pattern as follow when only one instance of an object is needed (for instance, the GameManager class) :
 ```
