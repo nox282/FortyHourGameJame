@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     public Item[] inventory;
     private Animator anim;
     public bool isPaused;
+    private PlayerTimerController PlayerTimer;
 
     private Vector3 movement;
     public bool isDashing;
@@ -178,13 +179,12 @@ public class PlayerController : MonoBehaviour
     
     void Use(int slot)
     {
-        anim.SetTrigger("Pickup");
-
         Item item = inventory[slot - 1];
 
         if (item && currentBed != null && currentBed.isOccupied)
         {
             currentPatientTarget.TreatSymptom(item); //use item on currentPatientTarget  
+            PlayerTimer.OnPlayerUsingItem(item);
             StartCoroutine(LockMovementWhileTreating(item));
 
             if (inTutorial)
@@ -203,7 +203,9 @@ public class PlayerController : MonoBehaviour
     private IEnumerator LockMovementWhileTreating(Item item)
     {
         isTreating = true;
+        anim.SetBool("isTreating", true);
         yield return new WaitForSeconds(item.duration);
+        anim.SetBool("isTreating", false);
         isTreating = false;
     }
 
@@ -266,5 +268,9 @@ public class PlayerController : MonoBehaviour
             Vector2 pos = Camera.main.WorldToScreenPoint(transform.position + new Vector3(-1f, 1f, 0));
             GUI.Box(new Rect(pos.x, Screen.height - pos.y, 100f, 20f), currentItem.itemName);
         }
+    }
+
+    public void RegisterTimer(PlayerTimerController timer) {
+        PlayerTimer = timer;
     }
 }
