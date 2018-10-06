@@ -50,7 +50,8 @@ public class PlayerController : MonoBehaviour
 
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         body = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
         movement = new Vector3(0, 0, 0);
@@ -60,21 +61,26 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update() {
-        if (!isPaused) {
+    void Update()
+    {
+        if (!isPaused)
+        {
             CheckForInputs();
 
-            if (!IsPickingUp() && !isTreating) {
+            if (!IsPickingUp() && !isTreating)
+            {
                 anim.SetBool("isMoving", IsMoving());
                 ApplyMovement();
             }
         }
     }
-    bool IsPickingUp() {
+    bool IsPickingUp()
+    {
         return anim.GetCurrentAnimatorStateInfo(0).IsName("PickUp");
     }
 
-    bool IsMoving() {
+    bool IsMoving()
+    {
         return movement != Vector3.zero;
     }
 
@@ -134,8 +140,9 @@ public class PlayerController : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(body.position, target, Time.deltaTime * currentSpeed);
 
-        if (movement != Vector3.zero) {
-            transform.rotation = Quaternion.Slerp(
+        if (movement != Vector3.zero)
+        {
+            transform.rotation = Quaternion.Slerp (
                 transform.rotation,
                 Quaternion.LookRotation(movement),
                 Time.deltaTime * turningSpeed
@@ -158,7 +165,8 @@ public class PlayerController : MonoBehaviour
         if (currentPatientTarget) Use(slot);
     }
 
-    void PickUp(int slot) {
+    void PickUp(int slot)
+    {
         anim.SetTrigger("Pickup");
         if (currentItem)
         {
@@ -263,14 +271,17 @@ public class PlayerController : MonoBehaviour
         } 
     }
 
-    void OnGUI() {
-        if (showItemInformation && currentItem) {
+    void OnGUI()
+    {
+        if (showItemInformation && currentItem)
+        {
             Vector2 pos = Camera.main.WorldToScreenPoint(transform.position + new Vector3(-1f, 1f, 0));
             GUI.Box(new Rect(pos.x, Screen.height - pos.y, 100f, 20f), currentItem.itemName);
         }
     }
 
-    public void RegisterTimer(PlayerTimerController timer) {
+    public void RegisterTimer(PlayerTimerController timer)
+    {
         PlayerTimer = timer;
     }
 }

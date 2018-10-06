@@ -50,7 +50,8 @@ public class GameController : MonoBehaviour
         StartCoroutine(StartLevel());
     }
 
-    public void Update() {
+    public void Update()
+    {
         if (Input.GetKeyDown(pauseKey))
             SetPauseState(!isPaused);    
     }
@@ -72,25 +73,29 @@ public class GameController : MonoBehaviour
     {
         while (true)
         {
-            if (!IsPaused() && spawnTimer >= spawnRate) {
+            if (!IsPaused() && spawnTimer >= spawnRate)
+            {
                 spawnTimer = 0.0f;
                 // Spawn new patient in waiting room
                 waitingRoom.Add(patientFactory.CreatePatient(spawnLocation));
                 Debug.Log(waitingRoom.Count);
 
                 // Fill up clinic
-                if (patientList.Count < maxPatientInClinic) {
+                if (patientList.Count < maxPatientInClinic)
+                {
                     // Select bed number randomly
                     int index = 0;
 
-                    do {
+                    do
+                    {
                         index = availableBeds[Random.Range(0, availableBeds.Count - 1)];
                     }
                     while (bedList[index].isOccupied);
 
                     GameObject patientObject = GetAliveWaitingPatient();
 
-                    if (patientObject != null) {
+                    if (patientObject != null)
+                    {
                         Debug.Log(index);
                         // Admit patient into clinic and take them to the first unoccupied bed
                         AdmitPatient(index, bedList[index], patientObject);
@@ -150,11 +155,15 @@ public class GameController : MonoBehaviour
         waitingRoom.RemoveAt(0);
     }
 
-    private void SnapToBed(Bed bed, GameObject patient) {
-        if (!bed.reversed) {
+    private void SnapToBed(Bed bed, GameObject patient)
+    {
+        if (!bed.reversed)
+        {
             patient.transform.position = bed.transform.position + bedOffset;
             patient.transform.rotation = Quaternion.LookRotation(bed.transform.forward);
-        } else {
+        }
+        else
+        {
             patient.transform.position = bed.transform.position + inversedBedOffset;
             patient.transform.rotation = Quaternion.Euler(275, 180, 0);            
         }
@@ -216,7 +225,8 @@ public class GameController : MonoBehaviour
         DestroyObject(patient);
     }
     
-    public void SetPauseState(bool pauseState) {
+    public void SetPauseState(bool pauseState)
+    {
         GameController instance = GameObject.FindObjectOfType<GameController>();
         instance.SetPauseStateForPlayer(pauseState);
         instance.SetPauseStateForPatient(pauseState);
@@ -225,11 +235,13 @@ public class GameController : MonoBehaviour
         instance.isPaused = pauseState;
     }
 
-    private void SetPauseStateForPlayer(bool pauseState) {
+    private void SetPauseStateForPlayer(bool pauseState)
+    {
         GameObject.FindObjectOfType<PlayerController>().isPaused = pauseState;
     }
 
-    private void SetPauseStateForPatient(bool pauseState) {
+    private void SetPauseStateForPatient(bool pauseState)
+    {
         
         // in waiting room
         foreach (GameObject patient in waitingRoom)
@@ -240,7 +252,8 @@ public class GameController : MonoBehaviour
             patient.Value.GetComponent<Patient>().isPaused = pauseState;
     }
 
-    private bool IsPaused() {
+    private bool IsPaused()
+    {
         return isPaused;
     }
 }

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerTimerController : MonoBehaviour {
+public class PlayerTimerController : MonoBehaviour
+{
     public GameObject TimerStand;
     public Vector3 offset;
 
@@ -18,7 +19,8 @@ public class PlayerTimerController : MonoBehaviour {
     private float timer;
 
     // Use this for initialization
-    void Start() {
+    void Start()
+    {
         camera = GameObject.FindObjectOfType<Camera>();
         
 
@@ -27,10 +29,13 @@ public class PlayerTimerController : MonoBehaviour {
 
         Image[] images = GetComponentsInChildren<Image>();
 
-        foreach (Image img in images) {
-            if (img.name.Equals("Image")) {
+        foreach (Image img in images)
+        {
+            if (img.name.Equals("Image"))
+            {
                 clockTexture = img;
-            } else
+            }
+            else
                 clockBG = img;
         }
         text = GetComponentInChildren<Text>();
@@ -39,19 +44,23 @@ public class PlayerTimerController : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
-        if (clockTexture.enabled) {
+    void Update()
+    {
+        if (clockTexture.enabled)
+        {
             transform.position = camera.WorldToScreenPoint(TimerStand.transform.position);
             clockTexture.fillAmount = timer / currentItem.duration;
             text.text = timer.ToString();
-            if (timer <= 0) {
+            if (timer <= 0)
+            {
                 clockBG.enabled = false;
                 text.enabled = false;
             }
         }
     }
 
-    public void OnPlayerUsingItem(Item item) {
+    public void OnPlayerUsingItem(Item item)
+    {
         clockTexture.enabled = true;
         clockBG.enabled = true;
         text.enabled = true;
@@ -60,16 +69,19 @@ public class PlayerTimerController : MonoBehaviour {
         StartCoroutine(Timer(item));
     }
 
-    private IEnumerator Timer(Item item) {
+    private IEnumerator Timer(Item item)
+    {
         timer = item.duration;
-        while (timer > 0) {
+        while (timer > 0)
+        {
             yield return new WaitForSeconds(1);
             timer--;
         }
         Reset();
     }
 
-    public void Reset() {
+    public void Reset()
+    {
         clockTexture.fillAmount = 1;
         clockTexture.enabled = false;
         clockBG.enabled = false;

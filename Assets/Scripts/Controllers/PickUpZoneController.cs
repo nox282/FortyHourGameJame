@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUpZoneController : MonoBehaviour {
+public class PickUpZoneController : MonoBehaviour
+{
     public Item item;
 
-    void Update() {
+    void Update()
+    {
         //Debug.Log(item.itemName);
     }
 }

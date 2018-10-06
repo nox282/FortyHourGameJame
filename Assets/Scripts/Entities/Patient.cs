@@ -10,7 +10,8 @@ public class Patient : MonoBehaviour
 
     private WwiseInterface wwInterface;
 
-    public Vector3[] popUpsOffset = {
+    public Vector3[] popUpsOffset = 
+    {
         new Vector3(-1f, 0f, 0),
         new Vector3(0f, 1f, 0),
         new Vector3(1f, 0f, 0),
@@ -47,12 +48,13 @@ public class Patient : MonoBehaviour
         while (timeLeft > 0)
         {
             yield return new WaitForSeconds(1);
-            if(!IsPaused())
+            if (!IsPaused())
                 timeLeft--;
         }
     }
 
-    private bool IsPaused() {
+    private bool IsPaused()
+    {
         return isPaused;
     }
 
@@ -100,11 +102,13 @@ public class Patient : MonoBehaviour
         }
     }
 
-    public List<Symptom> GetSymptoms() {
+    public List<Symptom> GetSymptoms()
+    {
         return symptoms;
     }
 
-    public string GetStringOfSymptoms() {
+    public string GetStringOfSymptoms()
+    {
         string str = "";
         foreach (Symptom s in symptoms)
             str += s.name + ", ";
@@ -158,7 +162,8 @@ public class Patient : MonoBehaviour
     {
         if (alive && symptoms.Count > 0)
             Die();
-        else if (alive) {
+        else if (alive)
+        {
             wwInterface.callEvent("Player_Success");
         }
 
@@ -181,14 +186,20 @@ public class Patient : MonoBehaviour
             gameController.PatientDied();
     }
 
-    void OnGUI() {
-        if (GetSymptoms().Count == 0) {
+    void OnGUI()
+    {
+        if (GetSymptoms().Count == 0)
+        {
             Vector2 pos = Camera.main.WorldToScreenPoint(transform.position + popUpsOffset[0]);
             GUI.Box(new Rect(pos.x, Screen.height - pos.y, 100f, 25f), "No symptom");
-        } else {
+        }
+        else
+        {
             int i = 0;
-            foreach (Symptom s in GetSymptoms()) {
-                if (i < popUpsOffset.Length) {
+            foreach (Symptom s in GetSymptoms())
+            {
+                if (i < popUpsOffset.Length)
+                {
                     Vector2 pos = Camera.main.WorldToScreenPoint(transform.position + popUpsOffset[i++]);
                     GUI.Box(new Rect(pos.x, Screen.height - pos.y, 100f, 25f), s.name);
                 }

@@ -15,14 +15,16 @@ public class TimerController : MonoBehaviour
     private Image clockBG;
     private Text text;
 
-    void Start() {
+    void Start()
+    {
         Camera camera = GameObject.FindObjectOfType<Camera>();
         transform.position = camera.WorldToScreenPoint(TimerStand.transform.position);
 
         bed.RegisterTimer(this);
 
         Image[] images = GetComponentsInChildren<Image>();
-        foreach (Image img in images) {
+        foreach (Image img in images)
+        {
             if (img.name.Equals("Image"))
                 clockTexture = img;
             else
@@ -36,25 +38,30 @@ public class TimerController : MonoBehaviour
         text.enabled = !text.enabled;
     }
 
-    void Update() {
-        if (clockTexture.enabled && !freezeTimer) {
+    void Update()
+    {
+        if (clockTexture.enabled && !freezeTimer)
+        {
             clockTexture.fillAmount = (float) currentPatient.timeLeft / currentPatient.lifespan;
             text.text = currentPatient.timeLeft.ToString();
-            if (currentPatient.timeLeft <= 0) {
+            if (currentPatient.timeLeft <= 0)
+            {
                 clockBG.enabled = false;
                 text.enabled = false;
             }
         }
     }
 
-    public void OnBedReceivingPatient(Patient patient) {
+    public void OnBedReceivingPatient(Patient patient)
+    {
         clockTexture.enabled = true;
         clockBG.enabled = true;
         text.enabled = true;
         currentPatient = patient;
     }
 
-    public void Reset() {
+    public void Reset()
+    {
         clockTexture.fillAmount = 1;
         clockTexture.enabled = false;
         clockBG.enabled = false;

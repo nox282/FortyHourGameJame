@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Desk : MonoBehaviour {
+public class Desk : MonoBehaviour
+{
     public Item[] items;
 }

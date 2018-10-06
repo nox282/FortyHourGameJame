@@ -4,36 +4,43 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class LevelManager : MonoBehaviour {
+public class LevelManager : MonoBehaviour
+{
     public int currentStage = 0;
 
     private WwiseInterface wwInterface;
 
-    void Awake() {
+    void Awake()
+    {
         DontDestroyOnLoad(transform.gameObject);
 
         wwInterface = GetComponent<WwiseInterface>();
     }
     
-    public void LoadNextStage() {
-        if (currentStage < 5) {
+    public void LoadNextStage()
+    {
+        if (currentStage < 5)
+        {
             SceneManager.LoadScene("Stage" + ++currentStage);
 
             wwInterface.setState("Game_Start", "Gameplay");
             wwInterface.callEvent("Play_Music");
 
             GameObject.FindObjectOfType<DataBank>().stage = currentStage;
-        } else
+        }
+        else
             SceneManager.LoadScene("Win");
     }
     
     // Loads the scene with the given name
-    public void LoadLevel(string level) {
+    public void LoadLevel(string level)
+    {
         SceneManager.LoadScene(level);
     }
 
     // Quit game
-    public void Quit() {
+    public void Quit()
+    {
         Application.Quit();
     }
 }

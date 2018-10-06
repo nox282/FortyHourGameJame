@@ -9,16 +9,19 @@ public class Bed : MonoBehaviour
     private Patient patient;
     public TimerController timerController;
     
-    void Update() {
+    void Update()
+    {
         if (!patient)
             timerController.Reset();
     }
 
-    public void RegisterTimer(TimerController tc) {
+    public void RegisterTimer(TimerController tc)
+    {
         timerController = tc;
     }
 
-    public void SetPatient(Patient _patient) {
+    public void SetPatient(Patient _patient)
+    {
         timerController.Reset();
         patient = _patient;
         timerController.OnBedReceivingPatient(patient);
