@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1290,6 +1290,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 2611916}
     m_Modifications:
+    - target: {fileID: 114331271915618230, guid: bd32dd465f9ec764e9a5aee10cb57d09,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224297818744388720, guid: bd32dd465f9ec764e9a5aee10cb57d09,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1383,6 +1388,36 @@ Prefab:
     - target: {fileID: 1383429984752956, guid: bd32dd465f9ec764e9a5aee10cb57d09, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331271915618230, guid: bd32dd465f9ec764e9a5aee10cb57d09,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdatePauseState
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331271915618230, guid: bd32dd465f9ec764e9a5aee10cb57d09,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331271915618230, guid: bd32dd465f9ec764e9a5aee10cb57d09,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1260213694}
+    - target: {fileID: 114331271915618230, guid: bd32dd465f9ec764e9a5aee10cb57d09,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331271915618230, guid: bd32dd465f9ec764e9a5aee10cb57d09,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331271915618230, guid: bd32dd465f9ec764e9a5aee10cb57d09,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd32dd465f9ec764e9a5aee10cb57d09, type: 2}
@@ -1847,7 +1882,6 @@ MonoBehaviour:
   stageDuration: 120
   deadAllowed: 4
   maxPatientInClinic: 6
-  isPaused: 0
   pauseKey: 0
   patientFactory: {fileID: 1260213695}
   waitingRoom: []

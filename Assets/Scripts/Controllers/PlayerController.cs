@@ -27,26 +27,28 @@ public class PlayerController : MonoBehaviour
     public KeyCode dismiss;
     public KeyCode pause;
 
-    // Components
-    private Rigidbody body;
-    public Item[] inventory;
-    private Animator anim;
-    public bool isPaused;
-    private PlayerTimerController PlayerTimer;
-
-    private Vector3 movement;
-    public bool isDashing;
-    private bool isDashActive = true;
-    private bool showItemInformation = false;
-    private bool isTreating = false;
-
-    // Environemental
+    // Environmental
     public Item currentItem;
     public Patient currentPatientTarget;
     public Bed currentBed;
-    private UIController uiController;
 
-    public bool inTutorial = false;
+    public Item[] inventory;
+
+    public bool isDashing;
+
+    // Components
+    private Vector3 movement;
+    private Rigidbody body;
+    private Animator anim;
+    private PlayerTimerController PlayerTimer;
+
+    private bool isDashActive = true;
+    private bool isTreating = false;
+    private bool showItemInformation = false;
+
+    private UIController uiController;
+    private GameController gameController;
+    private LevelManager levelManager;
 
 
 	// Use this for initialization
@@ -58,20 +60,18 @@ public class PlayerController : MonoBehaviour
         isDashing = false;
         inventory = new Item[4];
         uiController = GameObject.FindObjectOfType<UIController>();
+        levelManager = GameObject.FindObjectOfType<LevelManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!isPaused)
-        {
-            CheckForInputs();
+        CheckForInputs();
 
-            if (!IsPickingUp() && !isTreating)
-            {
-                anim.SetBool("isMoving", IsMoving());
-                ApplyMovement();
-            }
+        if (!IsPickingUp() && !isTreating)
+        {
+            anim.SetBool("isMoving", IsMoving());
+            ApplyMovement();
         }
     }
     bool IsPickingUp()
@@ -173,7 +173,7 @@ public class PlayerController : MonoBehaviour
             inventory[slot - 1] = currentItem;
             uiController.OnItemReceived(slot, currentItem);
 
-            if (inTutorial)
+            if (levelManager != null && levelManager.inTutorial)
             {
                 TutorialController controller = GameObject.FindObjectOfType<TutorialController>();
                 if (controller && controller.step == 8 && !controller.stepIsComplete && 
@@ -195,7 +195,7 @@ public class PlayerController : MonoBehaviour
             PlayerTimer.OnPlayerUsingItem(item);
             StartCoroutine(LockMovementWhileTreating(item));
 
-            if (inTutorial)
+            if (levelManager != null && levelManager.inTutorial)
             {
                 TutorialController controller = GameObject.FindObjectOfType<TutorialController>();
 
@@ -223,7 +223,7 @@ public class PlayerController : MonoBehaviour
         {
             currentPatientTarget.Dismiss();
 
-            if (inTutorial)
+            if (levelManager != null && levelManager.inTutorial)
             {
                 TutorialController controller = GameObject.FindObjectOfType<TutorialController>();
                 Debug.Log(controller.step);
@@ -243,7 +243,7 @@ public class PlayerController : MonoBehaviour
             currentItem = other.gameObject.GetComponent<PickUpZoneController>().item;
             showItemInformation = true;
 
-            if (inTutorial && controller)
+            if (levelManager != null && levelManager.inTutorial && controller)
             {
                 if (controller.step == 5 && !controller.stepIsComplete)
                     controller.Step6();

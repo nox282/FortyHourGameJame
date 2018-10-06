@@ -8,6 +8,8 @@ public class LevelManager : MonoBehaviour
 {
     public int currentStage = 0;
 
+    public bool inTutorial = false;
+
     private WwiseInterface wwInterface;
 
     void Awake()

@@ -269,7 +269,6 @@ public class TutorialController : MonoBehaviour
         patientObject.GetComponent<Patient>().AddSymptom(symptom.GetComponent<Symptom>());
 
         Patient patient = patientObject.GetComponent<Patient>();
-        patient.inTutorial = true;
 
         Bed bed = beds[0];
         patientObject.transform.position = bed.transform.position;

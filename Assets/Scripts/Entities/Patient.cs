@@ -6,30 +6,35 @@ using UnityEngine.UI;
 
 public class Patient : MonoBehaviour
 {
+    // Initial number of seconds the patient has before they die
     public int lifespan = 10;
 
-    private WwiseInterface wwInterface;
-
-    public Vector3[] popUpsOffset = 
+    // Number of seconds the patient has left before they die
+    public int timeLeft;
+    
+    // Relative positions of the symptoms text UI
+    public Vector3[] popUpsOffset =
     {
         new Vector3(-1f, 0f, 0),
         new Vector3(0f, 1f, 0),
         new Vector3(1f, 0f, 0),
     };
 
-    public int timeLeft;
-
+    // Patient current states
     private bool alive = true;
     private bool treating = false;
     private bool pronouncedDead = false;
-    public bool inTutorial = false;
-    public bool isPaused = false;
 
+    // Patient symptoms
     private List<Symptom> symptoms = new List<Symptom>();
 
+    // Points that the player has earned for this patient
     private int score = 0;
 
     private GameController gameController;
+    private LevelManager levelManager;
+
+    private WwiseInterface wwInterface;
 
 
     void Start()
@@ -38,24 +43,10 @@ public class Patient : MonoBehaviour
 
         wwInterface = GetComponent<WwiseInterface>();
         gameController = GameObject.FindObjectOfType<GameController>();
+        levelManager = GameObject.FindObjectOfType<LevelManager>();
 
-        if (!inTutorial)
+        if (levelManager != null && !levelManager.inTutorial)
             StartCoroutine(CountDown());
-    }
-
-    private IEnumerator CountDown()
-    {
-        while (timeLeft > 0)
-        {
-            yield return new WaitForSeconds(1);
-            if (!IsPaused())
-                timeLeft--;
-        }
-    }
-
-    private bool IsPaused()
-    {
-        return isPaused;
     }
 
     void Update()
@@ -63,6 +54,22 @@ public class Patient : MonoBehaviour
         if (alive && timeLeft <= 0 && !treating && symptoms.Count > 0)
             Die();
     }
+
+    void OnGUI()
+    {
+        if (GetSymptoms().Count == 0)
+            ShowSymptom(popUpsOffset[0], "No symptom");
+        else
+        {
+            int i = 0;
+            foreach (Symptom s in GetSymptoms())
+            {
+                if (i < popUpsOffset.Length)
+                    ShowSymptom(popUpsOffset[i++], s.name);
+            }
+        }
+    }
+
 
     public void SetSymptoms(List<Symptom> _symptoms)
     {
@@ -74,32 +81,6 @@ public class Patient : MonoBehaviour
     {
         if (alive && symptom != null)
             symptoms.Add(symptom);
-    }
-
-    public void AddTime(int time)
-    {
-        if (alive)
-            timeLeft += time;
-    }
-
-    public void ResetTimer()
-    {
-        timeLeft = lifespan;
-    }
-
-    public void TreatSymptom(Item item)
-    {
-        if (item != null)
-        {
-            foreach (Symptom symptom in symptoms)
-            {
-                if (string.Equals(symptom.cure.GetComponent<Item>().itemName, item.itemName))
-                {
-                    StartCoroutine(ApplyTreatment(symptom));
-                    break;
-                }
-            }
-        }
     }
 
     public List<Symptom> GetSymptoms()
@@ -121,6 +102,33 @@ public class Patient : MonoBehaviour
         return score;
     }
 
+    public void AddTime(int time)
+    {
+        if (alive)
+            timeLeft += time;
+    }
+
+    public void ResetTimer()
+    {
+        timeLeft = lifespan;
+    }
+
+    public void TreatSymptom(Item item)
+    {
+        if (item != null)
+        {
+            foreach (Symptom symptom in symptoms)
+            {
+                // Find symptom that can be cured by the item
+                if (string.Equals(symptom.cure.GetComponent<Item>().itemName, item.itemName))
+                {
+                    StartCoroutine(ApplyTreatment(symptom));
+                    break;
+                }
+            }
+        }
+    }
+
     public bool IsAlive()
     {
         return alive || symptoms.Count <= 0;
@@ -130,7 +138,27 @@ public class Patient : MonoBehaviour
     {
         return pronouncedDead;
     }
-    
+
+    public void Dismiss()
+    {
+        if (alive && symptoms.Count > 0)
+            Die();
+        else if (alive)
+            wwInterface.callEvent("Player_Success");
+
+        if (gameController != null)
+            gameController.PatientWasDismissed(gameObject);
+    }
+
+    private IEnumerator CountDown()
+    {
+        while (timeLeft > 0)
+        {
+            yield return new WaitForSeconds(1);
+            timeLeft--;
+        }
+    }
+
     private IEnumerator ApplyTreatment(Symptom symptom)
     {
         Debug.Log("treating: " + symptom.name + " - " + symptom.cure.GetComponent<Item>().duration);
@@ -158,19 +186,6 @@ public class Patient : MonoBehaviour
         }
     }
 
-    public void Dismiss()
-    {
-        if (alive && symptoms.Count > 0)
-            Die();
-        else if (alive)
-        {
-            wwInterface.callEvent("Player_Success");
-        }
-
-        if (gameController)
-            gameController.PatientWasDismissed(gameObject);
-    }
-
     private void Die()
     {
         Debug.Log("Dead");
@@ -182,28 +197,13 @@ public class Patient : MonoBehaviour
 
         wwInterface.callEvent("Player_Failure");
 
-        if (gameController)
+        if (gameController != null)
             gameController.PatientDied();
     }
 
-    void OnGUI()
+    private void ShowSymptom(Vector3 offset, string symptom)
     {
-        if (GetSymptoms().Count == 0)
-        {
-            Vector2 pos = Camera.main.WorldToScreenPoint(transform.position + popUpsOffset[0]);
-            GUI.Box(new Rect(pos.x, Screen.height - pos.y, 100f, 25f), "No symptom");
-        }
-        else
-        {
-            int i = 0;
-            foreach (Symptom s in GetSymptoms())
-            {
-                if (i < popUpsOffset.Length)
-                {
-                    Vector2 pos = Camera.main.WorldToScreenPoint(transform.position + popUpsOffset[i++]);
-                    GUI.Box(new Rect(pos.x, Screen.height - pos.y, 100f, 25f), s.name);
-                }
-            }
-        }
+        Vector2 pos = Camera.main.WorldToScreenPoint(transform.position + offset);
+        GUI.Box(new Rect(pos.x, Screen.height - pos.y, 100f, 25f), symptom);
     }
 }

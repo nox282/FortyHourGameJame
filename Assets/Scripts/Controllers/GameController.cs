@@ -17,7 +17,6 @@ public class GameController : MonoBehaviour
     public float stageDuration = 120;
     public int deadAllowed = 4;
     public int maxPatientInClinic = 6;
-    public bool isPaused;
     public KeyCode pauseKey;
 
     // Containers
@@ -31,6 +30,7 @@ public class GameController : MonoBehaviour
     private float spawnTimer;
     private int deadPatients = 0;
     private int score = 0;
+
 
     void Start()
     {
@@ -46,14 +46,13 @@ public class GameController : MonoBehaviour
         // Set input keycode for pause
         pauseKey = GameObject.FindObjectOfType<PlayerController>().pause;
 
-        SetPauseState(false);
         StartCoroutine(StartLevel());
     }
 
     public void Update()
     {
         if (Input.GetKeyDown(pauseKey))
-            SetPauseState(!isPaused);    
+            UpdatePauseState();    
     }
 
     private IEnumerator StartLevel()
@@ -73,7 +72,7 @@ public class GameController : MonoBehaviour
     {
         while (true)
         {
-            if (!IsPaused() && spawnTimer >= spawnRate)
+            if (spawnTimer >= spawnRate)
             {
                 spawnTimer = 0.0f;
                 // Spawn new patient in waiting room
@@ -225,35 +224,12 @@ public class GameController : MonoBehaviour
         DestroyObject(patient);
     }
     
-    public void SetPauseState(bool pauseState)
+    public void UpdatePauseState()
     {
+        Time.timeScale = Mathf.Abs(Time.timeScale - 1);
+        Time.fixedDeltaTime = Time.timeScale;
+
         GameController instance = GameObject.FindObjectOfType<GameController>();
-        instance.SetPauseStateForPlayer(pauseState);
-        instance.SetPauseStateForPatient(pauseState);
-        instance.PauseUILayer.SetActive(pauseState);
-        
-        instance.isPaused = pauseState;
-    }
-
-    private void SetPauseStateForPlayer(bool pauseState)
-    {
-        GameObject.FindObjectOfType<PlayerController>().isPaused = pauseState;
-    }
-
-    private void SetPauseStateForPatient(bool pauseState)
-    {
-        
-        // in waiting room
-        foreach (GameObject patient in waitingRoom)
-            patient.GetComponent<Patient>().isPaused = pauseState;
-        
-        // in clinic
-        foreach (KeyValuePair<int, GameObject> patient in patientList)
-            patient.Value.GetComponent<Patient>().isPaused = pauseState;
-    }
-
-    private bool IsPaused()
-    {
-        return isPaused;
+        instance.PauseUILayer.SetActive(Time.timeScale < 1.0f);
     }
 }
