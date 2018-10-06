@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -12,63 +12,53 @@ MonoBehaviour:
   m_Name: AkWwiseProjectData
   m_EditorClassIdentifier: 
   AcousticTextureWwu:
-  - Guid: '{3CE4A6DE-C5E0-42AE-A340-928F855F6069}'
-    m_lastTimePart2: -1999270675
-    m_lastTimePsrt1: 303411239
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
     ParentPhysicalPath: 
-    PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    guid: dea6e43ce0c5ae42a340928f855f6069
+    m_lastTime: -8586627740303927549
     List: []
-  autoPopulateEnabled: 1
   AuxBusWwu:
-  - Guid: '{494CC2D2-A303-4391-A59A-4B1DC817BF18}'
-    m_lastTimePart2: -1999270675
-    m_lastTimePsrt1: 289954393
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
-    PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    guid: d2c24c4903a39143a59a4b1dc817bf18
+    m_lastTime: -8586627740304701748
     List: []
   BankWwu:
-  - Guid: '{0B067C9E-64C0-4FD7-8A12-EA55AB87D9EE}'
-    m_lastTimePart2: -1999270675
-    m_lastTimePsrt1: 303381213
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
-    PhysicalPath: SoundBanks\Default Work Unit.wwu
+    guid: 9e7c060bc064d74f8a12ea55ab87d9ee
+    m_lastTime: -8586627740304621606
     List:
-    - Guid: 165c899ec26c5b4381e61e40dbfcf3a2
-      ID: 1211995789
-      Name: Soundbnk
-      Path: Default Work Unit\Soundbnk
+    - name: Soundbnk
+      guid: 165c899ec26c5b4381e61e40dbfcf3a2
+      id: 1211995789
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
       - ElementName: Soundbnk
         ObjectType: 7
-  basePath: Audio\GeneratedSoundBanks
-  callbackManagerBufferSize: 4
-  CurrentPluginConfig: 
-  defaultPoolSize: 4096
+      Path: Default Work Unit\Soundbnk
   EventWwu:
-  - Guid: '{D6D04880-DF42-4838-B748-B9C3CAE02F19}'
-    m_lastTimePart2: -1999270675
-    m_lastTimePsrt1: 288264231
+  - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
-    PhysicalPath: Events\Default Work Unit.wwu
+    guid: 8048d0d642df3848b748b9c3cae02f19
+    m_lastTime: -8586627740304791502
     List:
-    - Guid: fbe09d2c0e22664aa496b02ac2c90c94
-      ID: -1094008839
-      Name: Feet
-      Path: Default Work Unit\Feet
+    - name: Feet
+      guid: fbe09d2c0e22664aa496b02ac2c90c94
+      id: 3200958457
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
       - ElementName: Feet
         ObjectType: 3
+      Path: Default Work Unit\Feet
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - Guid: d3c5ead2a36b2346a9ad2446bda35370
-      ID: -745750021
-      Name: Patient_Cough
-      Path: Default Work Unit\Patients\Patient_Cough
+    - name: Patient_Cough
+      guid: d3c5ead2a36b2346a9ad2446bda35370
+      id: 3549217275
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
@@ -76,13 +66,13 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Patient_Cough
         ObjectType: 3
+      Path: Default Work Unit\Patients\Patient_Cough
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - Guid: 132e5e54f6e3644bac130c67374568d6
-      ID: -1624660822
-      Name: Patient_Fart
-      Path: Default Work Unit\Patients\Patient_Fart
+    - name: Patient_Fart
+      guid: 132e5e54f6e3644bac130c67374568d6
+      id: 2670306474
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
@@ -90,13 +80,13 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Patient_Fart
         ObjectType: 3
+      Path: Default Work Unit\Patients\Patient_Fart
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - Guid: 1792cbcc5af37d45bc3e1ed6046a3f74
-      ID: 918452968
-      Name: Patient_Vomit
-      Path: Default Work Unit\Patients\Patient_Vomit
+    - name: Patient_Vomit
+      guid: 1792cbcc5af37d45bc3e1ed6046a3f74
+      id: 918452968
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
@@ -104,13 +94,13 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Patient_Vomit
         ObjectType: 3
+      Path: Default Work Unit\Patients\Patient_Vomit
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - Guid: fbfe13898b8fb340b2e36dd68a353de3
-      ID: -2065839829
-      Name: Pickup_Cork
-      Path: Default Work Unit\Pickups\Pickup_Cork
+    - name: Pickup_Cork
+      guid: fbfe13898b8fb340b2e36dd68a353de3
+      id: 2229127467
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
@@ -118,13 +108,13 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Pickup_Cork
         ObjectType: 3
+      Path: Default Work Unit\Pickups\Pickup_Cork
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - Guid: 8ef57967ab271d46ae85722dbf513292
-      ID: 217759215
-      Name: Pickup_Generic
-      Path: Default Work Unit\Pickups\Pickup_Generic
+    - name: Pickup_Generic
+      guid: 8ef57967ab271d46ae85722dbf513292
+      id: 217759215
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
@@ -132,13 +122,13 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Pickup_Generic
         ObjectType: 3
+      Path: Default Work Unit\Pickups\Pickup_Generic
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - Guid: 0a37a56ca4aa64428f393de8109a241d
-      ID: 1313627535
-      Name: Pickup_Glue
-      Path: Default Work Unit\Pickups\Pickup_Glue
+    - name: Pickup_Glue
+      guid: 0a37a56ca4aa64428f393de8109a241d
+      id: 1313627535
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
@@ -146,49 +136,49 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Pickup_Glue
         ObjectType: 3
+      Path: Default Work Unit\Pickups\Pickup_Glue
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - Guid: add194d8d8eba044b75cd9a6ae224acc
-      ID: -1362926625
-      Name: Play_Music
-      Path: Default Work Unit\Play_Music
+    - name: Play_Music
+      guid: add194d8d8eba044b75cd9a6ae224acc
+      id: 2932040671
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
       - ElementName: Play_Music
         ObjectType: 3
+      Path: Default Work Unit\Play_Music
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - Guid: d63ad455fed3f940bb74ca1920ee8878
-      ID: -1005101455
-      Name: Player_Failure
-      Path: Default Work Unit\Player_Failure
+    - name: Player_Failure
+      guid: d63ad455fed3f940bb74ca1920ee8878
+      id: 3289865841
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
       - ElementName: Player_Failure
         ObjectType: 3
+      Path: Default Work Unit\Player_Failure
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - Guid: f32edc90097e2a448c05d9b072764565
-      ID: 1977201850
-      Name: Player_Success
-      Path: Default Work Unit\Player_Success
+    - name: Player_Success
+      guid: f32edc90097e2a448c05d9b072764565
+      id: 1977201850
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
       - ElementName: Player_Success
         ObjectType: 3
+      Path: Default Work Unit\Player_Success
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - Guid: 22cc1d1e38a6484d8895893b616af974
-      ID: 63629884
-      Name: Start_Hairdryer
-      Path: Default Work Unit\Pickups\Hairdryer\Start_Hairdryer
+    - name: Start_Hairdryer
+      guid: 22cc1d1e38a6484d8895893b616af974
+      id: 63629884
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
@@ -198,13 +188,13 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Start_Hairdryer
         ObjectType: 3
+      Path: Default Work Unit\Pickups\Hairdryer\Start_Hairdryer
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - Guid: 72ba6793a03c764e984dd5c4676547cf
-      ID: 1425259882
-      Name: Stop_Hairdryer
-      Path: Default Work Unit\Pickups\Hairdryer\Stop_Hairdryer
+    - name: Stop_Hairdryer
+      guid: 72ba6793a03c764e984dd5c4676547cf
+      id: 1425259882
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
@@ -214,31 +204,19 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Stop_Hairdryer
         ObjectType: 3
+      Path: Default Work Unit\Pickups\Hairdryer\Stop_Hairdryer
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-  ExpandedItems:
-  - /FortyHourGameJame_WwiseProject
-  - /FortyHourGameJame_WwiseProject/Events
-  - /FortyHourGameJame_WwiseProject/Events/Default Work Unit
-  - /FortyHourGameJame_WwiseProject/States
-  language: English(US)
-  lowerPoolSize: 2048
-  m_lastPopulateTimePart2: 0
-  m_lastPopulateTimePsrt1: 0
-  memoryCutoffThreshold: 0.95
-  preparePoolSize: 0
   RtpcWwu:
-  - Guid: '{4CE9DFE1-B035-417E-AAFB-9910ACAE5796}'
-    m_lastTimePart2: -1999270675
-    m_lastTimePsrt1: 288309272
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
-    PhysicalPath: Game Parameters\Default Work Unit.wwu
+    guid: e1dfe94c35b07e41aafb9910acae5796
+    m_lastTime: -8586627740304572067
     List:
-    - Guid: 77535d2778ab78489fdbb85bfd198b0b
-      ID: -374824356
-      Name: Timer
-      Path: Default Work Unit\Flatline Countdown\Timer
+    - name: Timer
+      guid: 77535d2778ab78489fdbb85bfd198b0b
+      id: 3920142940
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
@@ -246,50 +224,53 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Timer
         ObjectType: 13
+      Path: Default Work Unit\Flatline Countdown\Timer
   StateWwu:
-  - Guid: '{BC8036FE-4273-49B1-8D2B-52726ACBA45C}'
-    m_lastTimePart2: -1999270675
-    m_lastTimePsrt1: 303396228
+  - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
-    PhysicalPath: States\Default Work Unit.wwu
+    guid: fe3680bc7342b1498d2b52726acba45c
+    m_lastTime: -8586627740304661862
     List:
-    - Guid: 46664758194f2e4092a26f485f6c1e72
-      ID: 733168346
-      Name: Game_Start
-      Path: Default Work Unit\Game_Start
+    - name: Game_Start
+      guid: 46664758194f2e4092a26f485f6c1e72
+      id: 733168346
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
       - ElementName: Game_Start
         ObjectType: 9
-      ValueGuids:
-      - bytes: ff1dc5b1084a554f8102fb694c3d461f
-      - bytes: 945451942225be44b0f1f4c1c13962c3
-      - bytes: 9a837105fcd7d54d982af9f6d468d827
-      ValueIcons:
-      - ElementName: Gameplay
-        ObjectType: 8
-      - ElementName: Main_Title
-        ObjectType: 8
-      - ElementName: None
-        ObjectType: 8
-      valueIDs: 01bf550521930627db3ba32c
+      Path: Default Work Unit\Game_Start
       values:
-      - Gameplay
-      - Main_Title
-      - None
-  streamingPoolSize: 1024
+      - name: Gameplay
+        guid: ff1dc5b1084a554f8102fb694c3d461f
+        id: 89505537
+        PathAndIcons:
+        - ElementName: Gameplay
+          ObjectType: 8
+      - name: Main_Title
+        guid: 945451942225be44b0f1f4c1c13962c3
+        id: 654742305
+        PathAndIcons:
+        - ElementName: Main_Title
+          ObjectType: 8
+      - name: None
+        guid: 9a837105fcd7d54d982af9f6d468d827
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
   SwitchWwu:
-  - Guid: '{2FCAA61D-4BC9-4373-8E13-3F9816209A34}'
-    m_lastTimePart2: -1999270675
-    m_lastTimePsrt1: 303401232
+  - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
-    PhysicalPath: Switches\Default Work Unit.wwu
+    guid: 1da6ca2fc94b73438e133f9816209a34
+    m_lastTime: -8586627740304741638
     List: []
   TriggerWwu:
-  - Guid: '{5FADE5D7-16F6-4C83-A8AB-1F450E116C96}'
-    m_lastTimePart2: -1999270675
-    m_lastTimePsrt1: 303406235
+  - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
-    PhysicalPath: Triggers\Default Work Unit.wwu
+    guid: d7e5ad5ff616834ca8ab1f450e116c96
+    m_lastTime: -8586627740304302444
     List: []
+  ExpandedItems: []
+  autoPopulateEnabled: 1
+  CurrentPluginConfig: 

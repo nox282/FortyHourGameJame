@@ -30,13 +30,12 @@ public class WwiseSetupWizard
 			UnityEngine.Debug.Log("WwiseUnity: Refreshing asset database.");
 			UnityEditor.AssetDatabase.Refresh();
 
-			UnityEngine.Debug.Log("WwiseUnity: End of modify setup, exiting Unity.");
-			UnityEditor.EditorApplication.Exit(0);
+            // IMPORTANT: This log line is parsed by the Launcher. Do not modify it.
+			UnityEngine.Debug.Log("WwiseUnity: End of setup, exiting Unity.");
 		}
 		catch (System.Exception e)
 		{
 			UnityEngine.Debug.LogError("WwiseUnity: Exception caught: " + e);
-			UnityEditor.EditorApplication.Exit(1);
 		}
 	}
 
@@ -53,13 +52,12 @@ public class WwiseSetupWizard
 			UnityEngine.Debug.Log("WwiseUnity: Refreshing asset database.");
 			UnityEditor.AssetDatabase.Refresh();
 
+            // IMPORTANT: This log line is parsed by the Launcher. Do not modify it.
 			UnityEngine.Debug.Log("WwiseUnity: End of setup, exiting Unity.");
-			UnityEditor.EditorApplication.Exit(0);
 		}
 		catch (System.Exception e)
 		{
 			UnityEngine.Debug.LogError("WwiseUnity: Exception caught: " + e);
-			UnityEditor.EditorApplication.Exit(1);
 		}
 	}
 
@@ -110,7 +108,7 @@ public class WwiseSetupWizard
 			else
 			{
 				UnityEngine.Debug.LogError("WwiseUnity: ERROR: Missing parameter wwiseInstallMigrateStart.");
-				UnityEditor.EditorApplication.Exit(1);
+                return;
 			}
 
 			string migrateStopString = null;
@@ -121,7 +119,7 @@ public class WwiseSetupWizard
 			else
 			{
 				UnityEngine.Debug.LogError("WwiseUnity: ERROR: Missing parameter wwiseInstallMigrateStart.");
-				UnityEditor.EditorApplication.Exit(1);
+				return;
 			}
 
 			int migrateStart;
@@ -141,38 +139,30 @@ public class WwiseSetupWizard
 
 			PerformMigration(migrateStart, migrateStop);
 
+			UnityEditor.AssetDatabase.SaveAssets();
+
 			UnityEngine.Debug.Log("WwiseUnity: Refreshing asset database.");
 			UnityEditor.AssetDatabase.Refresh();
 
+            // IMPORTANT: This log line is parsed by the Launcher. Do not modify it.
 			UnityEngine.Debug.Log("WwiseUnity: End of setup, exiting Unity.");
-			UnityEditor.EditorApplication.Exit(0);
 		}
 		catch (System.Exception e)
 		{
 			UnityEngine.Debug.LogError("WwiseUnity: Exception caught: " + e);
-			UnityEditor.EditorApplication.Exit(1);
 		}
 	}
 
-	private static void MigrateCurrentScene(System.IO.FileInfo[] files, int migrateStart, int migrateStop)
+	private static void MigrateCurrentScene(System.Type[] wwiseComponentTypes, int migrateStart, int migrateStop)
 	{
 		var objectTypeMap = new System.Collections.Generic.Dictionary<System.Type, UnityEngine.Object[]>();
 
-		foreach (var file in files)
+		foreach (var objectType in wwiseComponentTypes)
 		{
-			var className = System.IO.Path.GetFileNameWithoutExtension(file.Name);
-
-			// Since monobehaviour scripts need to have the same name as the class it contains, we can use it to get the type of the object.
-			var objectType = System.Type.GetType(className + ", Assembly-CSharp");
-
-			if (objectType != null && objectType.IsSubclassOf(typeof(UnityEngine.Object)))
-			{
-				// Get all objects in the scene with the specified type.
-				var objects = UnityEngine.Object.FindObjectsOfType(objectType);
-
-				if (objects != null && objects.Length > 0)
-					objectTypeMap[objectType] = objects;
-			}
+			// Get all objects in the scene with the specified type.
+			var objects = UnityEngine.Object.FindObjectsOfType(objectType);
+			if (objects != null && objects.Length > 0)
+				objectTypeMap[objectType] = objects;
 		}
 
 		for (var ii = migrateStart; ii <= migrateStop; ++ii)
@@ -217,6 +207,23 @@ public class WwiseSetupWizard
 		}
 	}
 
+	private static System.Type[] GetWwiseComponentTypes()
+	{
+		var wwiseComponentTypes = new System.Collections.Generic.List<System.Type>();
+
+		var wwiseComponentFolder = UnityEngine.Application.dataPath + "/Wwise/Deployment/Components";
+		var files = new System.IO.DirectoryInfo(wwiseComponentFolder).GetFiles("*.cs", System.IO.SearchOption.AllDirectories);
+		foreach (var file in files)
+		{
+			var className = System.IO.Path.GetFileNameWithoutExtension(file.Name);
+			var objectType = System.Type.GetType(className + ", Assembly-CSharp");
+			if (objectType != null && objectType.IsSubclassOf(typeof(UnityEngine.Object)))
+				wwiseComponentTypes.Add(objectType);
+		}
+
+		return wwiseComponentTypes.ToArray();
+	}
+
 	public static void PerformMigration(int migrateStart, int migrateStop)
 	{
 		UpdateProgressBar(0f);
@@ -229,34 +236,33 @@ public class WwiseSetupWizard
 
 		// Get the name of the currently opened scene.
 		var currentScene = AkSceneUtils.GetCurrentScene().Replace('/', '\\');
-
-		var files =
-			new System.IO.DirectoryInfo(UnityEngine.Application.dataPath + "/Wwise/Deployment/Components").GetFiles("*.cs",
-				System.IO.SearchOption.AllDirectories);
+		var wwiseComponentTypes = GetWwiseComponentTypes();
 		var sceneInfo =
-			new System.IO.DirectoryInfo(UnityEngine.Application.dataPath).GetFiles("*.unity",
-				System.IO.SearchOption.AllDirectories);
-		var scenes = new string[sceneInfo.Length];
+			new System.IO.DirectoryInfo(UnityEngine.Application.dataPath).GetFiles("*.unity", System.IO.SearchOption.AllDirectories);
 
 		AkSceneUtils.CreateNewScene();
 		AkUtilities.IsMigrating = true;
 
-		for (var i = 0; i < scenes.Length; i++)
+		AkWwiseProjectInfo.PopulateForMigration();
+		AkWwiseWWUBuilder.UpdateWwiseObjectReferenceData();
+
+		for (var i = 0; i < sceneInfo.Length; i++)
 		{
-			UpdateProgressBar((float) i / scenes.Length);
+			UpdateProgressBar((float) i / sceneInfo.Length);
 
 			var scene = "Assets" + sceneInfo[i].FullName.Substring(UnityEngine.Application.dataPath.Length);
 			UnityEngine.Debug.Log("WwiseUnity: Migrating scene " + scene);
 
 			AkSceneUtils.OpenExistingScene(scene);
-			MigrateCurrentScene(files, migrateStart - 1, migrateStop - 1);
-			AkSceneUtils.SaveCurrentScene(null);
+			MigrateCurrentScene(wwiseComponentTypes, migrateStart - 1, migrateStop - 1);
+
+			AkWwiseWWUBuilder.PopulateWwiseObjectReferences();
+			AkSceneUtils.SaveCurrentScene();
 		}
 
 		UpdateProgressBar(1.0f);
 
 		AkSceneUtils.CreateNewScene();
-
 		AkUtilities.IsMigrating = false;
 
 		// Reopen the scene that was opened before the migration process started.
@@ -310,8 +316,12 @@ public class WwiseSetupWizard
 		// 3. Set the SoundBank path property on AkSoundEngineInitializer
 		CreateWwiseGlobalObject();
 
-		// 5. Add AkAudioListener component to camera
-		SetListener();
+		// 5. Disable the built-in audio listener, and add AkAudioListener component to camera
+		if (WwiseSettings.LoadSettings().CreateWwiseListener)
+		{
+			AkUtilities.RemoveUnityAudioListenerFromMainCamera();
+			AkUtilities.AddAkAudioListenerToMainCamera();
+		}
 
 		// 6. Enable "Run In Background" in PlayerSettings (PlayerSettings.runInbackground property)
 		UnityEditor.PlayerSettings.runInBackground = true;
@@ -334,17 +344,13 @@ public class WwiseSetupWizard
 	{
 		// Look for a game object which has the initializer component
 		var AkInitializers = UnityEngine.Object.FindObjectsOfType<AkInitializer>();
-		UnityEngine.GameObject WwiseGlobalGameObject = null;
 		if (AkInitializers.Length > 0)
-			UnityEngine.Object.DestroyImmediate(AkInitializers[0].gameObject);
+			UnityEditor.Undo.DestroyObjectImmediate(AkInitializers[0].gameObject);
 
-		WwiseGlobalGameObject = new UnityEngine.GameObject("WwiseGlobal");
+		var WwiseGlobalGameObject = new UnityEngine.GameObject("WwiseGlobal");
 
 		// attach initializer component
-		var AkInit = WwiseGlobalGameObject.AddComponent<AkInitializer>();
-
-		// Set the soundbank path property on the initializer
-		AkInit.basePath = Settings.SoundbankPath;
+		UnityEditor.Undo.AddComponent<AkInitializer>(WwiseGlobalGameObject);
 
 		// Set focus on WwiseGlobal
 		UnityEditor.Selection.activeGameObject = WwiseGlobalGameObject;
@@ -370,28 +376,6 @@ public class WwiseSetupWizard
 		return true;
 	}
 
-	// Disable the built-in audio listener, and add the AkGameObj to the camera
-	private static void SetListener()
-	{
-		var settings = WwiseSettings.LoadSettings();
-
-		// Remove the audio listener script
-		if (settings.CreateWwiseListener && UnityEngine.Camera.main != null)
-		{
-			var listener = UnityEngine.Camera.main.gameObject.GetComponent<UnityEngine.AudioListener>();
-			if (listener != null)
-				UnityEngine.Object.DestroyImmediate(listener);
-
-			// Add the AkGameObj script
-			{
-				UnityEngine.Camera.main.gameObject.AddComponent<AkAudioListener>();
-
-				var akGameObj = UnityEngine.Camera.main.gameObject.GetComponent<AkGameObj>();
-				akGameObj.isEnvironmentAware = false;
-			}
-		}
-	}
-
 	// Modify the .wproj file to set needed soundbank settings
 	private static bool SetSoundbankSettings()
 	{
@@ -406,11 +390,10 @@ public class WwiseSetupWizard
 		SoundbankPath = "Z:" + SoundbankPath;
 #endif
 
+		SoundbankPath = AkUtilities.MakeRelativePath(System.IO.Path.GetDirectoryName(WprojPath), SoundbankPath);
 		if (AkUtilities.EnableBoolSoundbankSettingInWproj("SoundBankGenerateHeaderFile", WprojPath))
-		{
 			if (AkUtilities.SetSoundbankHeaderFilePath(WprojPath, SoundbankPath))
 				return AkUtilities.EnableBoolSoundbankSettingInWproj("SoundBankGenerateMaxAttenuationInfo", WprojPath);
-		}
 
 		return false;
 	}

@@ -38,6 +38,9 @@ public partial class AkBuildPreprocessor
 #endif
 				return "Mac";
 
+			case (UnityEditor.BuildTarget)39: // UnityEditor.BuildTarget.Lumin
+				return "Lumin";
+				
 			case UnityEditor.BuildTarget.PS4:
 				return "PS4";
 
@@ -60,7 +63,11 @@ public partial class AkBuildPreprocessor
 	}
 }
 
+#if UNITY_2018_1_OR_NEWER
+public partial class AkBuildPreprocessor : UnityEditor.Build.IPreprocessBuildWithReport, UnityEditor.Build.IPostprocessBuildWithReport
+#else
 public partial class AkBuildPreprocessor : UnityEditor.Build.IPreprocessBuild, UnityEditor.Build.IPostprocessBuild
+#endif
 {
 	public int callbackOrder
 	{
@@ -146,17 +153,17 @@ public partial class AkBuildPreprocessor : UnityEditor.Build.IPreprocessBuild, U
 	}
 
 #if UNITY_2018_1_OR_NEWER
-	public void OnPreprocessBuild(UnityEditor.Build.Reporting.BuildReport report)
-	{
-		OnPreprocessBuildInternal(report.summary.platform, report.summary.outputPath);
-	}
+    public void OnPreprocessBuild(UnityEditor.Build.Reporting.BuildReport report)
+    {
+        OnPreprocessBuildInternal(report.summary.platform, report.summary.outputPath);
+    }
 
-	public void OnPostprocessBuild(UnityEditor.Build.Reporting.BuildReport report)
-	{
-		OnPostprocessBuildInternal(report.summary.platform, report.summary.outputPath);
-	}
+    public void OnPostprocessBuild(UnityEditor.Build.Reporting.BuildReport report)
+    {
+        OnPostprocessBuildInternal(report.summary.platform, report.summary.outputPath);
+    }
 #else
-	public void OnPreprocessBuild(UnityEditor.BuildTarget target, string path)
+    public void OnPreprocessBuild(UnityEditor.BuildTarget target, string path)
 	{
 		OnPreprocessBuildInternal(target, path);
 	}

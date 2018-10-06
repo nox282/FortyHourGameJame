@@ -57,7 +57,7 @@ public class AkWwiseSettingsWindow : UnityEditor.EditorWindow
 					else
 					{
 						WwiseSetupWizard.Settings.WwiseProjectPath =
-							AkUtilities.MakeRelativePath(UnityEngine.Application.dataPath + "/fake_depth", WwiseProjectPathNew);
+							AkUtilities.MakeRelativePath(UnityEngine.Application.dataPath, WwiseProjectPathNew);
 					}
 				}
 
@@ -150,7 +150,7 @@ public class AkWwiseSettingsWindow : UnityEditor.EditorWindow
 						else
 						{
 							WwiseSetupWizard.Settings.SoundbankPath =
-								AkUtilities.MakeRelativePath(UnityEngine.Application.streamingAssetsPath + "/fake_depth", SoundbankPathNew) +
+								AkUtilities.MakeRelativePath(UnityEngine.Application.streamingAssetsPath, SoundbankPathNew) +
 								"/";
 						}
 					}
@@ -163,23 +163,23 @@ public class AkWwiseSettingsWindow : UnityEditor.EditorWindow
 			description = "Enable copying of soundbanks at pre-Build step";
 			tooltip =
 				"Copies the soundbanks in the appropriate location for building and deployment. It is recommended to leave this box checked.";
+			WwiseSetupWizard.Settings.CopySoundBanksAsPreBuildStep = UnityEngine.GUILayout.Toggle(
+				WwiseSetupWizard.Settings.CopySoundBanksAsPreBuildStep, new UnityEngine.GUIContent(description, tooltip));
 
-			using (var toggle = new UnityEditor.EditorGUILayout.ToggleGroupScope(
-				new UnityEngine.GUIContent(description, tooltip), WwiseSetupWizard.Settings.CopySoundBanksAsPreBuildStep))
-			{
-				WwiseSetupWizard.Settings.CopySoundBanksAsPreBuildStep = toggle.enabled;
+			UnityEngine.GUI.enabled = WwiseSetupWizard.Settings.CopySoundBanksAsPreBuildStep;
 
-				description = "Enable soundbank generation at pre-Build step";
-				tooltip =
-					"Generates the soundbanks before copying them during pre-Build step. It is recommended to leave this box unchecked if soundbanks are generated on a specific build machine.";
-				WwiseSetupWizard.Settings.GenerateSoundBanksAsPreBuildStep = UnityEngine.GUILayout.Toggle(
-					WwiseSetupWizard.Settings.GenerateSoundBanksAsPreBuildStep, new UnityEngine.GUIContent(description, tooltip));
-			}
+			description = "Enable soundbank generation at pre-Build step";
+			tooltip =
+				"Generates the soundbanks before copying them during pre-Build step. It is recommended to leave this box unchecked if soundbanks are generated on a specific build machine.";
+			WwiseSetupWizard.Settings.GenerateSoundBanksAsPreBuildStep = UnityEngine.GUILayout.Toggle(
+				WwiseSetupWizard.Settings.GenerateSoundBanksAsPreBuildStep, new UnityEngine.GUIContent(description, tooltip));
+
+			UnityEngine.GUI.enabled = true;
 #endif
 
 			description = "Create WwiseGlobal GameObject";
 			tooltip =
-				"The WwiseGlobal object is a GameObject that contains the Initializing and Terminating scripts for the Wwise Sound Engine. In the Editor workflow, it is added to every scene, so that it can be properly be previewed in the Editor. In the game, only one instance is created, in the first scene, and it is persisted throughout the game. It is recommended to leave this box checked.";
+				"The WwiseGlobal object is a GameObject that contains the Initializing and Terminating scripts for the Wwise Sound Engine. In the Editor workflow, it is added to every scene, so that it can be properly previewed in the Editor. In the game, only one instance is created, in the first scene, and it is persisted throughout the game. It is recommended to leave this box checked.";
 			WwiseSetupWizard.Settings.CreateWwiseGlobal =
 				UnityEngine.GUILayout.Toggle(WwiseSetupWizard.Settings.CreateWwiseGlobal,
 					new UnityEngine.GUIContent(description, tooltip));
@@ -277,35 +277,19 @@ public class AkWwiseSettingsWindow : UnityEditor.EditorWindow
 								//in the wrong order.
 								var objWwise = new UnityEngine.GameObject("WwiseGlobal");
 
-								//Attach initializer and terminator components
-								var init = objWwise.AddComponent<AkInitializer>();
-								AkWwiseProjectInfo.GetData().CopyInitSettings(init);
+								UnityEditor.Undo.AddComponent<AkInitializer>(objWwise);
 							}
 						}
 						else if (AkInitializers.Length != 0 && AkInitializers[0].gameObject.name == "WwiseGlobal")
-							DestroyImmediate(AkInitializers[0].gameObject);
+							UnityEditor.Undo.DestroyObjectImmediate(AkInitializers[0].gameObject);
 					}
 
 					if (m_oldCreateWwiseListener != WwiseSetupWizard.Settings.CreateWwiseListener)
 					{
-						if (UnityEngine.Camera.main != null)
+						if (WwiseSetupWizard.Settings.CreateWwiseListener)
 						{
-							var akListener = UnityEngine.Camera.main.GetComponentInChildren<AkAudioListener>();
-
-							if (WwiseSetupWizard.Settings.CreateWwiseListener)
-							{
-								if (akListener == null)
-								{
-									akListener = UnityEditor.Undo.AddComponent<AkAudioListener>(UnityEngine.Camera.main.gameObject);
-									var akGameObj = akListener.GetComponentInChildren<AkGameObj>();
-									akGameObj.isEnvironmentAware = false;
-								}
-
-								// If Unity had already an audio listener, we want to remove it when adding our own.
-								var unityListener = UnityEngine.Camera.main.GetComponentInChildren<UnityEngine.AudioListener>();
-								if (unityListener != null)
-									DestroyImmediate(unityListener);
-							}
+							AkUtilities.RemoveUnityAudioListenerFromMainCamera();
+							AkUtilities.AddAkAudioListenerToMainCamera();
 						}
 					}
 
@@ -323,7 +307,7 @@ public class AkWwiseSettingsWindow : UnityEditor.EditorWindow
 						//Clear the data, the project path changed.
 						AkWwiseProjectInfo.GetData().Reset();
 						ApplyNewProject = false;
-						AkWwisePicker.WwiseProjectFound = true;
+						AkUtilities.IsWwiseProjectAvailable = true;
 					}
 
 					AkWwiseProjectInfo.Populate();

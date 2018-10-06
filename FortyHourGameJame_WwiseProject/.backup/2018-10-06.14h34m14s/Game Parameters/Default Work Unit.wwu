@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{4CE9DFE1-B035-417E-AAFB-9910ACAE5796}" SchemaVersion="85">
+	<GameParameters>
+		<WorkUnit Name="Default Work Unit" ID="{4CE9DFE1-B035-417E-AAFB-9910ACAE5796}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Flatline Countdown" ID="{88777B6E-5951-4585-B5D1-05C9A7F0283C}" ShortID="268582613">
+					<ChildrenList>
+						<GameParameter Name="Timer" ID="{275D5377-AB78-4878-9FDB-B85BFD198B0B}"/>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>

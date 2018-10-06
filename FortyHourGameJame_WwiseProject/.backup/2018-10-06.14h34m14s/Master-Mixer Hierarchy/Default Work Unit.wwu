@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{494CC2D2-A303-4391-A59A-4B1DC817BF18}" SchemaVersion="85">
+	<Busses>
+		<WorkUnit Name="Default Work Unit" ID="{494CC2D2-A303-4391-A59A-4B1DC817BF18}" PersistMode="Standalone">
+			<ChildrenList>
+				<Bus Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}">
+					<ReferenceList>
+						<Reference Name="AudioDevice">
+							<ObjectRef Name="System" ID="{8BC00FAE-E8D6-4B95-B8CA-5722A56C2166}" WorkUnitID="{9B5E91DE-4C63-4EC2-AAFE-887C9FA41C72}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Bus Name="Player_Failure" ID="{AA5E1CFD-7096-497D-A689-5A2DCF083490}"/>
+						<Bus Name="Player_Success_Dialouge" ID="{78544877-83B8-4AB2-B27B-73539A712704}">
+							<PropertyList>
+								<Property Name="RecoveryTime" Type="Real64" Value="4"/>
+							</PropertyList>
+							<DuckingList>
+								<DuckItem>
+									<BusRef Name="Player_Failure" ID="{AA5E1CFD-7096-497D-A689-5A2DCF083490}"/>
+									<DuckingParam>
+										<Volume>-96</Volume>
+										<FadeInTime>1</FadeInTime>
+										<FadeOutTime>1</FadeOutTime>
+										<FadeCurve>FadeExp3</FadeCurve>
+									</DuckingParam>
+								</DuckItem>
+							</DuckingList>
+						</Bus>
+					</ChildrenList>
+				</Bus>
+			</ChildrenList>
+		</WorkUnit>
+	</Busses>
+</WwiseDocument>

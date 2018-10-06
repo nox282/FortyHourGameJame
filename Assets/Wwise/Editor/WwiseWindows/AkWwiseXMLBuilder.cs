@@ -14,23 +14,28 @@ public class AkWwiseXMLBuilder
 		if (UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode || UnityEditor.EditorApplication.isCompiling)
 			return false;
 
-		// Try getting the SoundbanksInfo.xml file for Windows or Mac first, then try to find any other available platform.
-		var FullSoundbankPath = AkBasePathGetter.GetPlatformBasePath();
-		var filename = System.IO.Path.Combine(FullSoundbankPath, "SoundbanksInfo.xml");
-
-		if (!System.IO.File.Exists(filename))
+		try
 		{
-			FullSoundbankPath = System.IO.Path.Combine(UnityEngine.Application.streamingAssetsPath,
-				WwiseSetupWizard.Settings.SoundbankPath);
-			var foundFiles =
-				System.IO.Directory.GetFiles(FullSoundbankPath, "SoundbanksInfo.xml", System.IO.SearchOption.AllDirectories);
-			if (foundFiles.Length > 0)
+			// Try getting the SoundbanksInfo.xml file for Windows or Mac first, then try to find any other available platform.
+			var FullSoundbankPath = AkBasePathGetter.GetPlatformBasePath();
+			var filename = System.IO.Path.Combine(FullSoundbankPath, "SoundbanksInfo.xml");
+			if (!System.IO.File.Exists(filename))
+			{
+				FullSoundbankPath = System.IO.Path.Combine(UnityEngine.Application.streamingAssetsPath,
+					WwiseSetupWizard.Settings.SoundbankPath);
+
+				if (!System.IO.Directory.Exists(FullSoundbankPath))
+					return false;
+
+				var foundFiles =
+					System.IO.Directory.GetFiles(FullSoundbankPath, "SoundbanksInfo.xml", System.IO.SearchOption.AllDirectories);
+
+				if (foundFiles.Length == 0)
+					return false;
+
 				filename = foundFiles[0];
-		}
+			}
 
-		var bChanged = false;
-		if (System.IO.File.Exists(filename))
-		{
 			var time = System.IO.File.GetLastWriteTime(filename);
 			if (time <= s_LastParsed)
 				return false;
@@ -38,6 +43,7 @@ public class AkWwiseXMLBuilder
 			var doc = new System.Xml.XmlDocument();
 			doc.Load(filename);
 
+			var bChanged = false;
 			var soundBanks = doc.GetElementsByTagName("SoundBanks");
 			for (var i = 0; i < soundBanks.Count; i++)
 			{
@@ -45,9 +51,13 @@ public class AkWwiseXMLBuilder
 				for (var j = 0; j < soundBank.Count; j++)
 					bChanged = SerialiseSoundBank(soundBank[j]) || bChanged;
 			}
-		}
 
-		return bChanged;
+			return bChanged;
+		}
+		catch
+		{
+			return false;
+		}
 	}
 
 	private static bool SerialiseSoundBank(System.Xml.XmlNode node)

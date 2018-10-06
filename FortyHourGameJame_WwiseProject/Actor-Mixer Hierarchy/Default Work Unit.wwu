@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{4227B00A-4022-4AEB-891D-5117B57812B8}" SchemaVersion="85">
+<WwiseDocument Type="WorkUnit" ID="{4227B00A-4022-4AEB-891D-5117B57812B8}" SchemaVersion="89">
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{4227B00A-4022-4AEB-891D-5117B57812B8}" PersistMode="Standalone">
 			<ChildrenList>
 				<RandomSequenceContainer Name="Footsteps" ID="{E2BC05AB-2262-49ED-ACC9-1B90144D4798}" ShortID="496645217">
 					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
 						<Property Name="Pitch" Type="int32">
 							<ValueList>
 								<Value>700</Value>
@@ -21,7 +22,6 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
-						<Property Name="PositioningType" Type="int16" Value="1"/>
 						<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
@@ -56,7 +56,7 @@
 							<ChildrenList>
 								<AudioFileSource Name="catfeet3" ID="{02040E1B-65A2-472E-85C3-710612EA64F1}" ShortID="568111304">
 									<PropertyList>
-										<Property Name="TrimBegin" Type="Real64" Value="0.0364635758570386"/>
+										<Property Name="TrimBegin" Type="Real64" Value="3.64635758570386E-02"/>
 										<Property Name="TrimEnd" Type="Real64" Value="0.307619985412108"/>
 									</PropertyList>
 									<Language>SFX</Language>
@@ -79,7 +79,7 @@
 							<ChildrenList>
 								<AudioFileSource Name="Catfeet1" ID="{108FE082-162B-4E56-89F2-7C96DAA9255E}" ShortID="309080841">
 									<PropertyList>
-										<Property Name="TrimBegin" Type="Real64" Value="0.0904318243982495"/>
+										<Property Name="TrimBegin" Type="Real64" Value="9.04318243982495E-02"/>
 										<Property Name="TrimEnd" Type="Real64" Value="0.488331851750547"/>
 									</PropertyList>
 									<Language>SFX</Language>
@@ -102,7 +102,7 @@
 							<ChildrenList>
 								<AudioFileSource Name="catfeet2wav" ID="{D493B8D0-FD52-4324-B028-52A44F58F098}" ShortID="669727910">
 									<PropertyList>
-										<Property Name="TrimBegin" Type="Real64" Value="0.0442942879285194"/>
+										<Property Name="TrimBegin" Type="Real64" Value="4.42942879285194E-02"/>
 										<Property Name="TrimEnd" Type="Real64" Value="0.279107380561634"/>
 									</PropertyList>
 									<Language>SFX</Language>
@@ -125,7 +125,7 @@
 							<ChildrenList>
 								<AudioFileSource Name="catfeet4" ID="{BC9C60D7-588C-489C-83F8-235ACA3FC6A8}" ShortID="643082199">
 									<PropertyList>
-										<Property Name="TrimBegin" Type="Real64" Value="0.0253901121444201"/>
+										<Property Name="TrimBegin" Type="Real64" Value="2.53901121444201E-02"/>
 										<Property Name="TrimEnd" Type="Real64" Value="0.323146881838074"/>
 									</PropertyList>
 									<Language>SFX</Language>
@@ -148,8 +148,8 @@
 							<ChildrenList>
 								<AudioFileSource Name="catfeet5" ID="{6C4D6C4A-B237-4A22-A9C0-12D3C476C45B}" ShortID="697992013">
 									<PropertyList>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.0609336250911743"/>
-										<Property Name="TrimBegin" Type="Real64" Value="0.0106633843909555"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="6.09336250911743E-02"/>
+										<Property Name="TrimBegin" Type="Real64" Value="1.06633843909555E-02"/>
 										<Property Name="TrimEnd" Type="Real64" Value="0.252874544128373"/>
 									</PropertyList>
 									<Language>SFX</Language>
@@ -212,7 +212,7 @@
 											<ChildrenList>
 												<AudioFileSource Name="Player_Fail_01" ID="{D8122143-2F7A-40D6-B538-9BE4C1013B37}" ShortID="885052381">
 													<PropertyList>
-														<Property Name="TrimBegin" Type="Real64" Value="0.0193547820933625"/>
+														<Property Name="TrimBegin" Type="Real64" Value="1.93547820933625E-02"/>
 													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>Player_Fail_01.wav</AudioFile>
@@ -455,7 +455,7 @@
 										<AudioFileSource Name="Cat Ded_01" ID="{0376AC48-BC81-43AE-A38D-A613A4A098D6}" ShortID="798491742">
 											<PropertyList>
 												<Property Name="FadeOutDuration" Type="Real64" Value="0.246827133479212"/>
-												<Property Name="TrimBegin" Type="Real64" Value="0.0787746170678337"/>
+												<Property Name="TrimBegin" Type="Real64" Value="7.87746170678337E-02"/>
 												<Property Name="TrimEnd" Type="Real64" Value="2.04814004376368"/>
 											</PropertyList>
 											<Language>SFX</Language>
@@ -804,8 +804,8 @@
 					<ChildrenList>
 						<ActorMixer Name="Hairdryer" ID="{E6D5FEF2-93AF-4E01-A788-F7297E392A8D}" ShortID="432212887">
 							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
 								<Property Name="OverridePositioning" Type="bool" Value="True"/>
-								<Property Name="PositioningType" Type="int16" Value="1"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-18</Value>
@@ -1020,7 +1020,7 @@
 										<AudioFileSource Name="Pills" ID="{4A0A6EC6-4194-45F9-B780-A7BBFF885073}" ShortID="435812243">
 											<PropertyList>
 												<Property Name="FadeOutDuration" Type="Real64" Value="0.10458139587892"/>
-												<Property Name="TrimBegin" Type="Real64" Value="0.0213127963165573"/>
+												<Property Name="TrimBegin" Type="Real64" Value="2.13127963165573E-02"/>
 												<Property Name="TrimEnd" Type="Real64" Value="0.293422684172137"/>
 											</PropertyList>
 											<Language>SFX</Language>
@@ -1037,7 +1037,7 @@
 				</ActorMixer>
 				<ActorMixer Name="Patients" ID="{5456DE65-AB3E-4710-B5B4-27773B050E48}" ShortID="476013988">
 					<PropertyList>
-						<Property Name="PositioningType" Type="int16" Value="1"/>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
@@ -1285,7 +1285,7 @@
 									<ChildrenList>
 										<AudioFileSource Name="Coughing" ID="{8DF9FDA2-2299-4A2F-960D-183425D882EC}" ShortID="775747653">
 											<PropertyList>
-												<Property Name="FadeOutDuration" Type="Real64" Value="0.0778373222100656"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="7.78373222100656E-02"/>
 												<Property Name="TrimBegin" Type="Real64" Value="0.029937431619256"/>
 												<Property Name="TrimEnd" Type="Real64" Value="0.754423276805252"/>
 											</PropertyList>
@@ -1500,7 +1500,7 @@
 										<AudioFileSource Name="Fart_01" ID="{9E94FA23-8F43-41DC-9285-FAA06196973E}" ShortID="758342291">
 											<PropertyList>
 												<Property Name="FadeOutDuration" Type="Real64" Value="0.156455142231948"/>
-												<Property Name="TrimBegin" Type="Real64" Value="0.0185995623632385"/>
+												<Property Name="TrimBegin" Type="Real64" Value="1.85995623632385E-02"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Fart_01.wav</AudioFile>
@@ -1535,7 +1535,7 @@
 										<AudioFileSource Name="Fart_02" ID="{FE276D63-F863-4F51-B418-5D98C9C85248}" ShortID="170942105">
 											<PropertyList>
 												<Property Name="FadeOutDuration" Type="Real64" Value="0.157002188183807"/>
-												<Property Name="TrimBegin" Type="Real64" Value="0.0202407002188184"/>
+												<Property Name="TrimBegin" Type="Real64" Value="2.02407002188184E-02"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Fart_02.wav</AudioFile>
@@ -1570,7 +1570,7 @@
 										<AudioFileSource Name="Fart_03" ID="{46CF337F-6574-49DF-AC69-15E40A7C21E0}" ShortID="618064879">
 											<PropertyList>
 												<Property Name="FadeOutDuration" Type="Real64" Value="0.448304157549234"/>
-												<Property Name="TrimBegin" Type="Real64" Value="0.0556619256017505"/>
+												<Property Name="TrimBegin" Type="Real64" Value="5.56619256017505E-02"/>
 												<Property Name="TrimEnd" Type="Real64" Value="1.28774617067834"/>
 											</PropertyList>
 											<Language>SFX</Language>
@@ -1606,7 +1606,7 @@
 										<AudioFileSource Name="Fart_04" ID="{80E437C6-7FDB-44BE-83CD-E0C6FEB83183}" ShortID="881014296">
 											<PropertyList>
 												<Property Name="FadeOutDuration" Type="Real64" Value="0.1304704595186"/>
-												<Property Name="TrimBegin" Type="Real64" Value="0.0036925601750547"/>
+												<Property Name="TrimBegin" Type="Real64" Value="3.6925601750547E-03"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Fart_04.wav</AudioFile>
@@ -1709,7 +1709,7 @@
 										<AudioFileSource Name="Fart_07" ID="{F5DE0F6C-9C8E-4109-9D02-B73E53E6F15C}" ShortID="996027806">
 											<PropertyList>
 												<Property Name="FadeOutDuration" Type="Real64" Value="0.202954048140044"/>
-												<Property Name="TrimBegin" Type="Real64" Value="0.0388402625820569"/>
+												<Property Name="TrimBegin" Type="Real64" Value="3.88402625820569E-02"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Fart_07.wav</AudioFile>
@@ -1744,7 +1744,7 @@
 										<AudioFileSource Name="Fart_08" ID="{DBE59486-500E-4DED-BDC9-8759967AD7C0}" ShortID="564322928">
 											<PropertyList>
 												<Property Name="FadeOutDuration" Type="Real64" Value="0.164660831509847"/>
-												<Property Name="TrimBegin" Type="Real64" Value="0.0448577680525164"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.48577680525164E-02"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Fart_08.wav</AudioFile>

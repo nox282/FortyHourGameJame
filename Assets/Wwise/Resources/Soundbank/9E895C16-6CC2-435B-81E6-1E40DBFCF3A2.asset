@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca9ba563c366a041806c2f316a8c4d0, type: 3}
+  m_Name: 9E895C16-6CC2-435B-81E6-1E40DBFCF3A2
+  m_EditorClassIdentifier: 
+  objectName: Soundbnk
+  id: 1211995789
+  guid: 9E895C16-6CC2-435B-81E6-1E40DBFCF3A2
