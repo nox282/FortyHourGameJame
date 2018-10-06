@@ -24,7 +24,8 @@ public class PatientFactory : MonoBehaviour
                 symptomIndex = Random.Range(0, bank.symptoms.Count - 1);
             }
             while (assignedSymptoms.Contains(symptomIndex));
-             
+
+            assignedSymptoms.Add(symptomIndex);
             patient.GetComponent<Patient>().AddSymptom(bank.symptoms[symptomIndex].GetComponent<Symptom>());
         }
 

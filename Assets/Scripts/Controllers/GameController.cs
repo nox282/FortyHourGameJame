@@ -49,15 +49,59 @@ public class GameController : MonoBehaviour
         StartCoroutine(StartLevel());
     }
 
-    public void Update()
+    void Update()
     {
         if (Input.GetKeyDown(pauseKey))
             UpdatePauseState();    
     }
 
+    public void PatientDied()
+    {
+        deadPatients++;
+        deadPatients_ui.text = deadPatients.ToString();
+
+        if (deadPatients >= deadAllowed)
+            EndStage();
+    }
+
+    public void PatientWasDismissed(GameObject patient)
+    {
+        if (patient.GetComponent<Patient>().IsAlive())
+            score += patient.GetComponent<Patient>().GetPointsEarned();
+
+        int index = -1;
+        foreach (KeyValuePair<int, GameObject> pair in patientList)
+        {
+            if (GameObject.Equals(pair.Value, patient))
+            {
+                index = pair.Key;
+                break;
+            }
+        }
+
+        if (index >= 0)
+        {
+            bedList[index].isOccupied = false;
+            availableBeds.Add(index);
+            patientList.Remove(index);
+        }
+
+        DestroyObject(patient);
+    }
+
+    public void UpdatePauseState()
+    {
+        Time.timeScale = Mathf.Abs(Time.timeScale - 1);
+        Time.fixedDeltaTime = Time.timeScale;
+
+        GameController instance = GameObject.FindObjectOfType<GameController>();
+        instance.PauseUILayer.SetActive(Time.timeScale < 1.0f);
+    }
+
     private IEnumerator StartLevel()
     {
         yield return new WaitForSeconds(3);
+
         StartCoroutine(TickStageTimer());
         StartCoroutine(SpawnPatient());
     }
@@ -65,6 +109,7 @@ public class GameController : MonoBehaviour
     private IEnumerator TickStageTimer()
     {
         yield return new WaitForSeconds(stageDuration);
+
         EndStage();
     }
 
@@ -75,9 +120,9 @@ public class GameController : MonoBehaviour
             if (spawnTimer >= spawnRate)
             {
                 spawnTimer = 0.0f;
+
                 // Spawn new patient in waiting room
                 waitingRoom.Add(patientFactory.CreatePatient(spawnLocation));
-                Debug.Log(waitingRoom.Count);
 
                 // Fill up clinic
                 if (patientList.Count < maxPatientInClinic)
@@ -95,7 +140,6 @@ public class GameController : MonoBehaviour
 
                     if (patientObject != null)
                     {
-                        Debug.Log(index);
                         // Admit patient into clinic and take them to the first unoccupied bed
                         AdmitPatient(index, bedList[index], patientObject);
                     }
@@ -188,48 +232,5 @@ public class GameController : MonoBehaviour
     private void Win()
     {
         GameObject.FindObjectOfType<LevelManager>().LoadLevel("Win");
-    }
-
-    public void PatientDied()
-    {
-        deadPatients++;
-        deadPatients_ui.text = deadPatients.ToString();
-
-        if (deadPatients >= deadAllowed)
-            EndStage();
-    }
-
-    public void PatientWasDismissed(GameObject patient)
-    {
-        if (patient.GetComponent<Patient>().IsAlive())
-            score += patient.GetComponent<Patient>().GetPointsEarned();
-
-        int index = -1;
-        foreach (KeyValuePair<int, GameObject> pair in patientList)
-        {
-            if (GameObject.Equals(pair.Value, patient))
-            {
-                index = pair.Key;
-                break;
-            }
-        }
-
-        if (index >= 0)
-        {
-            bedList[index].isOccupied = false;
-            availableBeds.Add(index);
-            patientList.Remove(index);
-        }
-
-        DestroyObject(patient);
-    }
-    
-    public void UpdatePauseState()
-    {
-        Time.timeScale = Mathf.Abs(Time.timeScale - 1);
-        Time.fixedDeltaTime = Time.timeScale;
-
-        GameController instance = GameObject.FindObjectOfType<GameController>();
-        instance.PauseUILayer.SetActive(Time.timeScale < 1.0f);
     }
 }

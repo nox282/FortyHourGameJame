@@ -226,7 +226,6 @@ public class PlayerController : MonoBehaviour
             if (levelManager != null && levelManager.inTutorial)
             {
                 TutorialController controller = GameObject.FindObjectOfType<TutorialController>();
-                Debug.Log(controller.step);
                 if (controller && controller.step == 13 && !controller.stepIsComplete)
                     controller.Step14();
             }

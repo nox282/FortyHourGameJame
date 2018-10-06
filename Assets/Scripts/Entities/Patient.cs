@@ -65,7 +65,7 @@ public class Patient : MonoBehaviour
             foreach (Symptom s in GetSymptoms())
             {
                 if (i < popUpsOffset.Length)
-                    ShowSymptom(popUpsOffset[i++], s.name);
+                    ShowSymptom(popUpsOffset[i++], s.symptomName);
             }
         }
     }
@@ -92,7 +92,7 @@ public class Patient : MonoBehaviour
     {
         string str = "";
         foreach (Symptom s in symptoms)
-            str += s.name + ", ";
+            str += s.symptomName + ", ";
 
         return str;
     }
@@ -161,7 +161,6 @@ public class Patient : MonoBehaviour
 
     private IEnumerator ApplyTreatment(Symptom symptom)
     {
-        Debug.Log("treating: " + symptom.name + " - " + symptom.cure.GetComponent<Item>().duration);
         treating = true;
 
         yield return new WaitForSeconds(symptom.cure.GetComponent<Item>().duration);
@@ -169,18 +168,17 @@ public class Patient : MonoBehaviour
         score += symptom.points;
         symptoms.Remove(symptom);
 
-        Debug.Log("Treatment for " + symptom.name + " over");
         treating = false;
 
         switch (symptom.cure.GetComponent<Item>().itemName)
         {
-            case "ice":
+            case "Ice":
                 symptoms.Add(GameObject.FindObjectOfType<DataBank>().GetSymptom("wet"));
                 AddTime(5);
                 break;
 
-            case "needle and thread":
-                symptoms.Add(GameObject.FindObjectOfType<DataBank>().GetSymptom("injured paw"));
+            case "Thread":
+                symptoms.Add(GameObject.FindObjectOfType<DataBank>().GetSymptom("Injured Paw"));
                 AddTime(3 + 5);
                 break;
         }
@@ -188,8 +186,6 @@ public class Patient : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("Dead");
-
         GetComponentInChildren<Animator>().SetTrigger("Dead");
 
         alive = false;
