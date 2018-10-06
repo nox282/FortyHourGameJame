@@ -21,7 +21,7 @@ public class PatientFactory : MonoBehaviour
             int symptomIndex;
             do
             {
-                symptomIndex = Random.Range(0, bank.symptoms.Count - 1);
+                symptomIndex = Random.Range(0, bank.symptoms.Count);
             }
             while (assignedSymptoms.Contains(symptomIndex));
 

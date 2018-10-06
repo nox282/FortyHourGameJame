@@ -132,7 +132,7 @@ public class GameController : MonoBehaviour
 
                     do
                     {
-                        index = availableBeds[Random.Range(0, availableBeds.Count - 1)];
+                        index = availableBeds[Random.Range(0, availableBeds.Count)];
                     }
                     while (bedList[index].isOccupied);
 

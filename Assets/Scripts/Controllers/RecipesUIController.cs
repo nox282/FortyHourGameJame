@@ -18,6 +18,7 @@ public class RecipesUIController : MonoBehaviour
 
     private float CurrentRecipeYOffsetAmount;
 
+
 	// Use this for initialization
 	void Awake ()
     {
