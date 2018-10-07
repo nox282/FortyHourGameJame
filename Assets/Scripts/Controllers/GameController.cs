@@ -31,6 +31,8 @@ public class GameController : MonoBehaviour
     private int deadPatients = 0;
     private int score = 0;
 
+    private int timePassed = 0;
+
 
     void Start()
     {
@@ -108,7 +110,12 @@ public class GameController : MonoBehaviour
 
     private IEnumerator TickStageTimer()
     {
-        yield return new WaitForSeconds(stageDuration);
+        while (timePassed < stageDuration)
+        {
+            yield return new WaitForSeconds(1);
+            timePassed++;
+            Debug.Log("Time: " + timePassed);
+        }
 
         EndStage();
     }
@@ -231,6 +238,6 @@ public class GameController : MonoBehaviour
 
     private void Win()
     {
-        GameObject.FindObjectOfType<LevelManager>().LoadLevel("Win");
+        GameObject.FindObjectOfType<LevelManager>().LoadLevel("WinTransition");
     }
 }
